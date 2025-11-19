@@ -66,7 +66,7 @@
 /* 網頁主視覺 */
 .banner {
   margin-top: 65px;
-  min-height: 60vh;
+  min-height: 70vh;
   background: url(../images/index/hero-banner.png) no-repeat center center, url(../images/index/hero-line-1.svg) no-repeat #0A2A78;
   background-size: cover;
   position: relative;
@@ -600,4 +600,38 @@
     font-size: 16px;
     letter-spacing: 0.1em;
   }
+}
+
+/* 關於我們 ===================  */
+.brand-story {
+  margin: 144px 0 160px 0;
+  display: flex;
+  gap: 5%;
+}
+
+.brand-story-pic img {
+  display: block;
+  width: 100%;
+}
+
+.brand-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-story-title {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand-concept-head {
+  justify-content: space-between;
+}
+
+.brand-concept-head [class^="concept-head"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
