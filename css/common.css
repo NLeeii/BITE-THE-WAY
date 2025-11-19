@@ -132,10 +132,12 @@ html {
   .header-nav a {
     color: var(--color-primary-dark);
   }
+
   .header-btn .order {
     background-color: var(--color-accent);
     border: 2px solid var(--color-accent);
   }
+
   .header-btn .cart span {
     color: var(--color-primary-light);
     transition: all .3s;
@@ -165,7 +167,7 @@ html {
 .header-banner-title {
   font-size: 60px;
   line-height: 125%;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-weight: 700;
   color: var(--color-white);
 }
@@ -242,15 +244,28 @@ html {
   color: var(--color-black);
 
   .to-top a {
-  background-color: var(--color-primary-light);
-  color: var(--color-white);
-}
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+  }
 }
 
 /* 字體設定 */
+.libre-franklin {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  line-height: 125%;
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  font: 20px/160% "Noto Sans TC", sans-serif;
+	color: var(--color-black);
+}
+
 .title {
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 125%;
   letter-spacing: 0.05em;
   color: var(--color-primary-dark);
@@ -258,7 +273,7 @@ html {
 
 .subtitle {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 125%;
   letter-spacing: 0.05em;
   color: var(--color-primary-default);
@@ -266,7 +281,7 @@ html {
 
 .subheading {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 125%;
   letter-spacing: 0.05em;
   color: var(--color-primary-default);
@@ -288,7 +303,7 @@ html {
 
 .txt-md {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 140%;
   letter-spacing: 0.03em;
   color: var(--color-black);
@@ -309,23 +324,23 @@ html {
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
   .title {
-  font-size: 32px;
-}
+    font-size: 32px;
+  }
 
-.subtitle {
-  font-size: 24px;
-  line-height: 160%;
-}
+  .subtitle {
+    font-size: 24px;
+    line-height: 160%;
+  }
 
-.subheading {
-  font-size: 20px;
-  line-height: 160%;
-}
+  .subheading {
+    font-size: 20px;
+    line-height: 160%;
+  }
 }
 
 /* 按鈕 */
