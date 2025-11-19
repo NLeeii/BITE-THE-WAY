@@ -1,3 +1,8 @@
+/* 圖片樣式 */
+img {
+  display: block;
+}
+
 /* 版心居中  */
 .container {
   max-width: 1320px;
@@ -15,6 +20,7 @@ html {
   /* --color-accent: #D37B00; */
   --color-black: #191919;
   --color-gray: #7D7D7D;
+  --color-light-gray: #F4F4F4;
   --color-white: #fff;
 }
 
@@ -253,8 +259,10 @@ html {
 .libre-franklin {
   font-family: "Libre Franklin", sans-serif;
   font-optical-sizing: auto;
+  font-size: 55px;
   line-height: 125%;
   font-weight: 900;
+  letter-spacing: 0.05em;
   font-style: normal;
 }
 
