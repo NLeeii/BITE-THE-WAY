@@ -1,0 +1,603 @@
+::selection {
+  background-color: var(--color-secondary);
+}
+
+/* 動畫 */
+@keyframes bounce {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes wave-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* google-icon */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+/* 網頁主視覺 */
+.banner {
+  margin-top: 65px;
+  min-height: 60vh;
+  background: url(../images/index/hero-banner.png) no-repeat center center, url(../images/index/hero-line-1.svg) no-repeat #0A2A78;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+  /* 給上下一點空間 */
+}
+
+.banner-title {
+  color: var(--color-white);
+  font: 36px/125% "Franklin Gothic Heavy";
+  letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner {
+    margin-top: 65px;
+    background-size: auto;
+    height: 850px;
+    position: relative;
+  }
+
+  .banner-title {
+    position: absolute;
+    font: 60px/125% "Franklin Gothic Heavy";
+  }
+
+  .banner-title:first-child {
+    left: 205px;
+    top: 56px;
+  }
+
+  .banner-title:last-child {
+    right: 94px;
+    bottom: 56px;
+  }
+
+}
+
+/* 首頁-品牌故事 */
+.index-brand {
+  overflow: hidden;
+}
+
+.index-story {
+  background: url(../images/index/story-curve-03.svg) no-repeat right 25%/22%;
+}
+
+.index-story .container {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 5%;
+  align-items: flex-end;
+  padding: 120px 0 32px 0;
+}
+
+[class^="story-"] img {
+  max-width: 100%;
+}
+
+.story-draw-1 {
+  animation: bounce 1.5s infinite alternate-reverse;
+}
+
+.index-story-subtitle {
+  margin: 64px 0 56px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .story-draw-2 {
+    display: none;
+  }
+}
+
+/* 首頁-線條裝飾 */
+.index-story-draw {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+
+/* 首頁-品牌理念 */
+.index-concept {
+  display: flex;
+  gap: 4%;
+}
+
+.index-concept-pic img {
+  display: block;
+  width: 100%;
+}
+
+.index-concept-content {
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  gap: 32px;
+}
+
+.index-concept-draw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index-concept-draw img {
+  display: block;
+}
+
+.story-draw-3 {
+  animation: up .8s infinite linear alternate-reverse;
+}
+
+/* 首頁-嚴選食材 */
+.index-ingredient {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4%;
+  margin-bottom: 80px;
+}
+
+.index-ingredient-pic {
+  
+}
+
+.index-ingredient-pic img {
+  display: block;
+  width: 100%;
+}
+
+.index-ingredient-content {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  gap: 32px;
+}
+
+/* 首頁-slogan裝飾 */
+.index-slogan-bar {
+  padding: 21px 0 20px 0;
+  background-color: var(--color-primary-default);
+  color: #fff;
+  text-align: center;
+  font: 60px/125% "Franklin Gothic Heavy";
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.index-slogan-bar p {
+  animation: scroll 15s infinite linear;
+}
+
+.index-slogan-bar-1 {
+  background-color: var(--color-secondary);
+}
+
+/* 首頁-聯名餐點&最新消息 */
+.index-meal_news {
+  padding: 96px 0 122px 0;
+  background: url(../images/index/bg-logo.svg) no-repeat center 380px;
+}
+
+/* 首頁-營養師聯名餐點 */
+.index-meal {
+  margin-bottom: 160px;
+  position: relative;
+}
+
+.index-meal .title {
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.burger-list ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-list ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.burger-list li:nth-child(2) {
+  position: relative;
+}
+
+.burger-list-deco img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: wave-1 .8s infinite alternate-reverse;
+}
+
+.burger-list-deco .curve-02 {
+  left: 78%;
+}
+
+.burger-list .subheading {
+  color: var(--color-black);
+}
+
+.burger-list-pic img {
+  max-width: 100%;
+}
+
+.index-meal .large-btn {
+  margin-top: 44px;
+  text-align: center;
+}
+
+/* 左右按鈕 */
+.slider-btn .prev,
+.next {
+  display: block;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.slider-btn .prev {
+  position: absolute;
+  top: 266px;
+  left: -65px;
+  background: url(../images/index/arrow-prev.svg) no-repeat center var(--color-primary-light);
+  transition: all .3s;
+}
+
+.slider-btn .next {
+  position: absolute;
+  top: 266px;
+  right: -65px;
+  background: url(../images/index/arrow-next.svg) no-repeat center var(--color-primary-light);
+  transition: all .3s;
+}
+
+.slider-btn .prev:hover,
+.next:hover {
+  background-color: var(--color-secondary);
+}
+
+/* 首頁-最新消息 */
+.index-news-title {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.index-news-list ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-news-pic img {
+  max-width: 100%;
+}
+
+.index-news .large-btn {
+  margin-top: 88px;
+  text-align: center;
+}
+
+/* 最新消息頁 ===================  */
+.news {
+  padding-top: 80px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+}
+
+.news-list .news-pic img {
+  display: block;
+  width: 100%;
+}
+
+.news-list .row {
+  justify-content: center;
+  gap: 40px;
+}
+
+.news-list .news-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.news-content .news-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.news-type {
+  width: 80px;
+  height: 32px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+}
+
+.news-page-select-btn {
+  margin-top: 80px;
+}
+
+/* 門市資訊頁 =================== */
+.store {
+  margin-bottom: 88px;
+}
+
+.store .row {
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.store-title {
+  margin: 72px 0 40px 0;
+  font: 40px/125% "Franklin Gothic Heavy";
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.store-contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 22px 0 48px 0;
+}
+
+.store-name-list ul {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.store-name-list li {
+  padding-bottom: 10px;
+  border-bottom: 3px solid transparent;
+}
+
+.store-name-list li:first-child {
+  border-bottom: 3px solid var(--color-primary-light);
+}
+
+.store-name-list li:first-child a {
+  color: var(--color-primary-light);
+}
+
+.store-name-list li a {
+  color: #7D7D7D;
+}
+
+.store-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.store-info-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.store-pic img {
+  display: block;
+}
+
+.contact-form ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 12px;
+  padding: 5px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #7D7D7D;
+  border-radius: 5px;
+  outline-color: var(--color-primary-light);
+}
+
+.contact-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.contact-form .submit-btn {
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* 加入我們頁 ===================  */
+.brand-introduce ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-introduce ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-introduce-content {
+  padding: 150px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.brand-introduce-pic img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width:1600px) {
+  .brand-introduce-content {
+    padding: 100px;
+  }
+}
+
+/* 線上點餐頁 ===================  */
+.main-menu {
+  margin-top: 153px;
+  background: url(../images/order/bg-logo.svg) no-repeat center 40%;
+}
+
+.menu-title {
+    margin-bottom: 104px;
+    color: var(--color-primary-default);
+    font: 60px/125% "Franklin Gothic Heavy";
+    letter-spacing: 0.05em;
+}
+
+.menu-title .txt-sm {
+    margin-left: 45px;
+    font: 16px/140% "Noto Sans TC";
+    letter-spacing: 0.05em;
+    color: var(--color-black);
+}
+
+.menu-select-button ul {
+  margin-bottom: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.menu-select-button a {
+  display: block;
+  width: 136px;
+  height: 50px;
+  border: 1px solid var(--color-primary-dark);
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 48px;
+  color: var(--color-primary-dark);
+
+}
+
+.menu-select-button li:first-child a {
+  border: 1px solid var(--color-primary-light);
+  color: var(--color-white);
+  background-color: var(--color-primary-light);
+}
+
+
+.menu-list {
+  .menu-list-item {
+    margin-bottom: 32px;
+    padding: 40px 45px;
+    text-align: center;
+  }
+
+  .menu-list-item img {
+    max-width: 100%;
+    transition: all .3s;
+  }
+
+  .menu-list-item:hover img {
+    scale: 1.1;
+  }
+
+  .menu-list-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--color-black);
+  }
+
+  .menu-list-txt .price {
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    color: var(--color-primary-dark);
+  }
+
+  .menu-list-txt .burger-eng-name {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+  }
+}
+
