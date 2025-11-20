@@ -240,6 +240,10 @@
   text-align: center;
 }
 
+.burger-list {
+  margin-bottom: 44px;
+}
+
 .burger-list ul {
   display: flex;
   justify-content: space-between;
@@ -277,9 +281,8 @@
   max-width: 100%;
 }
 
-.index-meal .large-btn {
-  margin-top: 44px;
-  text-align: center;
+.index-meal .large-btn a {
+  margin: 0 auto;
 }
 
 /* 左右按鈕 */
@@ -318,6 +321,10 @@
   text-align: center;
 }
 
+.index-news-list {
+  margin-bottom: 88px;
+}
+
 .index-news-list ul {
   display: flex;
   justify-content: space-between;
@@ -327,9 +334,8 @@
   max-width: 100%;
 }
 
-.index-news .large-btn {
-  margin-top: 88px;
-  text-align: center;
+.index-news .large-btn a {
+  margin: 0 auto;
 }
 
 /* 最新消息頁 ===================  */
@@ -480,6 +486,10 @@
   text-align: center;
 }
 
+.contact-form .submit-btn a {
+  margin: 0 auto;
+}
+
 /* 加入我們頁 ===================  */
 .brand-introduce {
   margin: 72px 0;
@@ -531,8 +541,8 @@
   max-width: 100%;
 }
 
-.join-btn {
-  text-align: center;
+.join-btn a {
+  margin: 0 auto;
 }
 
 /* 線上點餐頁 ===================  */
@@ -622,6 +632,204 @@
     font-size: 16px;
     letter-spacing: 0.1em;
   }
+}
+
+/* 加入購物車彈窗 */
+.add-to-cart {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(99,99,99,.6);
+  z-index: 5;
+  /* 隱藏設定 */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all .3s ease;
+}
+
+.add-to-cart.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.add-to-cart-pop {
+  position: relative;
+  justify-content: center;
+  padding: 64px 0;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, .3);
+  background-color: #fff;
+}
+
+.add-to-cart-title p {
+  color: var(--color-black);
+}
+
+.add-to-cart-pic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 94px;
+  background: url(../images/order/add-deco-3.svg) no-repeat 20% 82%/60%;
+}
+
+.add-to-cart-pic img {
+  max-width: 100%;
+}
+
+.add-deco img {
+  max-width: 100%;
+  animation: wave-1 .8s infinite alternate-reverse;
+}
+
+.add-deco-1 {
+  position: absolute;
+  left: 0;
+  top: 40px;
+}
+
+.add-deco-2 {
+  position: absolute;
+  right: 100px;
+  top: 40px;
+}
+
+.add-to-cart-pull_down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  height: 40px;
+  border: 1px solid var(--color-black);
+  border-radius: 10px;
+
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 30px;
+    font-size: 30px;
+  }
+  button span {
+    font-size: 30px;
+  }
+}
+
+.add-to-cart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 4.31818%;
+}
+
+.add-to-cart-add_on {
+  
+  .add_on-title {
+    margin-bottom: 8px;
+  }
+
+  .add_on-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+  }
+
+  .add_on-content ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .add_on-content ul li label {
+    display: flex;
+    align-items: center;
+  }
+
+  .add_on-content ul li input {
+    margin: 3;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.add-to-cart-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-to-cart-btn {
+  display: flex;
+  gap: 8px;
+}
+
+/* 關閉按鈕 */
+.close-btn a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  border-radius: 20px 0 5px 0;
+}
+
+.close-btn a span {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+/* 成功加入購物車彈窗 */
+.add-success {
+  position: fixed;
+  right: 0;
+  top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 280px;
+  height: 100px;
+  background-color: var(--color-secondary);
+  border-radius: 20px 0 0 20px;
+  color: var(--color-white);
+  font-size: 24px;
+  z-index: 5;
+  transition: all .5s;
+  /* 隱藏設定 */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: all .4s;
+}
+
+.add-success.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.add-success span {
+  font-size: 30px;
 }
 
 /* 關於我們 ===================  */
