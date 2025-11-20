@@ -930,6 +930,37 @@
   gap: 40px;
 }
 
+.ingredient-pic-list li {
+  position: relative;
+  overflow: hidden;
+}
+
 .ingredient-pic-list img {
   max-width: 100%;
+}
+
+.ingredient-pic-list .mask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: absolute;
+  left: 8px;
+  top: 0;
+  padding: 30px;
+  width: calc(100% - 16px);
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  opacity: 0;
+  transition: all .3s;
+}
+
+.ingredient-pic-list .mask p {
+  color: var(--color-white);
+}
+
+.ingredient-pic-list li:hover .mask {
+  opacity: 1;
 }
