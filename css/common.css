@@ -93,9 +93,10 @@ html {
   --color-primary-default: #0A2A78;
   --color-primary-light: #2A5BAE;
   --color-primary-dark: #163262;
-  --color-secondary: #78D604;
+  --color-secondary: #86C232;
+  /* --color-secondary: #FFB300; */
+
   --color-accent: #C74317;
-  /* --color-accent: #D37B00; */
   --color-black: #191919;
   --color-gray: #7D7D7D;
   --color-light-gray: #F4F4F4;

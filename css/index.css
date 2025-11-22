@@ -122,7 +122,6 @@
   justify-content: flex-end;
   align-items: center;
   gap: 4%;
-  margin-bottom: 80px;
 }
 
 .index-ingredient-pic img {
@@ -332,6 +331,10 @@
 }
 
 /* 門市資訊頁 =================== */
+.store-header-banner {
+  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/store/header-banner.jpg) no-repeat;
+}
+
 .store {
   margin-bottom: 88px;
 }
@@ -725,7 +728,7 @@
 
 .add-to-cart-btn {
   display: flex;
-  gap: 8px;
+  /* justify-content: flex-end; */
 }
 
 /* 關閉按鈕 */
