@@ -235,12 +235,22 @@ html {
 
 /* 頁首banner */
 .header-banner {
+  position: relative;
   margin-top: 65px;
-  padding-top: 117px;
   width: 100%;
-  height: 355px;
-  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/news/header-banner.jpg) no-repeat;
+  /* height: 355px; */
   text-align: center;
+}
+
+.header-banner-pic img {
+  width: 100%;
+}
+
+.header-banner-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 /* @media screen and (max-width: 1600px) {

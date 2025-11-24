@@ -257,17 +257,18 @@
   margin-bottom: 88px;
 }
 
-.index-news-list ul {
-  display: flex;
-  justify-content: space-between;
-}
-
 .index-news-list li {
   transition: all .5s;
 }
 
 .index-news-list li:hover {
   transform: translateY(-10px);
+}
+
+.index-news-list li a {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .index-news-pic img {
@@ -331,10 +332,6 @@
 }
 
 /* 門市資訊頁 =================== */
-.store-header-banner {
-  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/store/header-banner.jpg) no-repeat;
-}
-
 .store {
   margin-bottom: 88px;
 }
@@ -444,10 +441,6 @@
 }
 
 /* 加入我們頁 ===================  */
-.join-header-banner {
-  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/join/header-banner.jpg) no-repeat;
-}
-
 .brand-introduce {
   margin: 72px 0;
 }
@@ -790,10 +783,6 @@
 }
 
 /* 關於我們 ===================  */
-.about-header-banner {
-  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/about/header-banner.jpg) no-repeat;
-}
-
 .brand-story {
   margin: 144px 0 160px 0;
   display: flex;
