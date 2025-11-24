@@ -444,6 +444,10 @@
 }
 
 /* 加入我們頁 ===================  */
+.join-header-banner {
+  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/join/header-banner.jpg) no-repeat;
+}
+
 .brand-introduce {
   margin: 72px 0;
 }
@@ -786,6 +790,10 @@
 }
 
 /* 關於我們 ===================  */
+.about-header-banner {
+  background: url(../images/news/banner-curve.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/about/header-banner.jpg) no-repeat;
+}
+
 .brand-story {
   margin: 144px 0 160px 0;
   display: flex;

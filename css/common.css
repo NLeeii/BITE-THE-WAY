@@ -243,11 +243,11 @@ html {
   text-align: center;
 }
 
-@media screen and (max-width: 1600px) {
+/* @media screen and (max-width: 1600px) {
   .header-banner {
     background: url(../images/news/banner-curve-sm.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/news/burger-banner.jpg) no-repeat;
   }
-}
+} */
 
 .header-banner-title {
   font-size: 60px;
