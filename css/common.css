@@ -253,12 +253,6 @@ html {
   transform: translate(-50%,-50%);
 }
 
-/* @media screen and (max-width: 1600px) {
-  .header-banner {
-    background: url(../images/news/banner-curve-sm.svg) no-repeat right 65%, url(../images/news/banner-hashtag.svg) no-repeat 35% 50%, url(../images/news/burger-banner.jpg) no-repeat;
-  }
-} */
-
 .header-banner-title {
   font-size: 60px;
   line-height: 125%;
@@ -422,6 +416,26 @@ body {
 
 .bold {
   font-weight: 700;
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    line-height: 160%;
+  }
+
+  .subheading {
+    font-size: 24px;
+    line-height: 160%;
+  }
+
+  .txt-lg {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 768px) {

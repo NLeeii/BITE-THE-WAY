@@ -52,10 +52,15 @@
 }
 
 .index-story .container {
-  display: flex;
-  gap: 5%;
   align-items: flex-end;
   padding: 120px 0 32px 0;
+}
+
+.index-story-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 [class^="story-"] img {
@@ -70,17 +75,57 @@
   margin: 64px 0 56px 0;
 }
 
-@media screen and (max-width: 768px) {
-  .story-draw-2 {
-    display: none;
-  }
-}
-
-/* 首頁-線條裝飾 */
+/* 首頁-線條插圖 */
 .index-story-draw {
   display: flex;
   justify-content: center;
   margin-bottom: 90px;
+}
+
+.index-story-draw img {
+  width: 100%;
+}
+
+.index-story-draw .story-draw-2 {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .index-story-content {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .index-story {
+    background: none;
+  }
+
+  .story-draw-2 {
+    display: none;
+  }
+
+  .index-story-draw {
+    align-items: center;
+  }
+
+  .index-story-draw .story-curve-1 {
+    transform: translateX(-60px) rotate(8deg);
+  }
+
+  .index-story-draw .story-draw-2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .index-story {
+    background: none;
+  }
+
+  .story-draw-2 {
+    display: none;
+  }
 }
 
 /* 首頁-品牌理念 */
@@ -385,7 +430,7 @@
 
 .store-content {
   display: none;
-  animation: fade-in .8s ease ;
+  animation: fade-in .8s ease;
 }
 
 .store-content.show {
@@ -594,7 +639,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(99,99,99,.6);
+  background-color: rgba(99, 99, 99, .6);
   z-index: 5;
   /* 隱藏設定 */
   opacity: 0;
@@ -673,6 +718,7 @@
     height: 30px;
     font-size: 30px;
   }
+
   button span {
     font-size: 30px;
   }
@@ -686,7 +732,7 @@
 }
 
 .add-to-cart-add_on {
-  
+
   .add_on-title {
     margin-bottom: 8px;
   }
