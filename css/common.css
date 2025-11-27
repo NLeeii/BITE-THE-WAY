@@ -610,3 +610,15 @@ body {
   border: none;
   text-align: center;
 }
+
+/* 顯示模式-rwd用 */
+
+/* rwd時顯示 */
+.show-lg-pc {
+  display: none;
+}
+
+/* rwd時隱藏 */
+.hide-lg-pc {
+  display: block;
+}

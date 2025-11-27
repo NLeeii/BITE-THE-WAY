@@ -60,6 +60,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 56px;
   text-align: center;
 }
 
@@ -68,11 +69,17 @@
 }
 
 .story-draw-1 {
+  display: flex;
+  justify-content: center;
   animation: bounce 1.5s infinite alternate-reverse;
 }
 
-.index-story-subtitle {
+/* .index-story-subtitle {
   margin: 64px 0 56px 0;
+} */
+
+.rwd-index-story-txt {
+  display: none;
 }
 
 /* 首頁-線條插圖 */
@@ -93,6 +100,10 @@
 @media screen and (max-width: 1200px) {
   .index-story-content {
     text-align: center;
+  }
+
+  .index-story-txt {
+    display: none;
   }
 }
 
@@ -119,11 +130,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .index-story {
-    background: none;
+  .index-story-content {
+    gap: 32px;
+    margin: 40px 0 20px 0;
   }
 
-  .story-draw-2 {
+  .index-story-draw .story-draw-2 {
     display: none;
   }
 }
@@ -132,10 +144,14 @@
 .index-concept {
   display: flex;
   gap: 4%;
+  padding-right: 15.6%;
+}
+
+.index-concept-pic{
+  flex: 3;
 }
 
 .index-concept-pic img {
-  display: block;
   width: 100%;
 }
 
@@ -144,6 +160,7 @@
   flex-direction: column;
   width: 22%;
   gap: 32px;
+  flex: 2;
 }
 
 .index-concept-draw {
@@ -151,10 +168,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  height: 80%;
+  flex: 1;
 }
 
 .index-concept-draw img {
-  display: block;
+  max-width: 100%;
 }
 
 .story-draw-3 {
@@ -164,13 +183,17 @@
 /* 首頁-嚴選食材 */
 .index-ingredient {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 4%;
+  padding-left: 15.6%;
+}
+
+.index-ingredient-pic {
+  flex: 3;
 }
 
 .index-ingredient-pic img {
-  display: block;
   width: 100%;
 }
 
@@ -179,6 +202,51 @@
   flex-direction: column;
   width: 23%;
   gap: 32px;
+  flex: 1;
+}
+
+@media screen and (max-width: 1200px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+  .index-concept {
+    display: block;
+  }
+
+  .index-concept-content {
+    margin: 20px auto;
+    align-items: center;
+    text-align: center;
+    width: 85%;
+    gap: 16px;
+  }
+
+  .index-concept-draw {
+    /* flex-direction: row; */
+    align-items: center;
+  }
+
+  .index-concept-draw .story-curve-2 {
+    display: none;
+  }
+
+  .index-concept-draw img {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .index-ingredient {
+    display: block;
+  }
+
+  .index-ingredient-content {
+    margin: 20px auto;
+    align-items: center;
+    text-align: center;
+    width: 85%;
+    gap: 16px;
+  }
 }
 
 /* 首頁-slogan裝飾 */
@@ -959,4 +1027,15 @@
 
 .ingredient-pic-list li:hover .mask {
   opacity: 1;
+}
+
+/* 通用media區 */
+@media screen and (max-width: 1200px) {
+  .show-lg-pc {
+    display: block;
+  }
+
+  .hide-lg-pc {
+    display: none;
+  }
 }
