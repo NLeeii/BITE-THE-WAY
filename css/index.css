@@ -144,11 +144,12 @@
 .index-concept {
   display: flex;
   gap: 4%;
-  padding-right: 15.6%;
+  padding-right: 10%;
 }
 
-.index-concept-pic{
+.index-concept-pic {
   flex: 3;
+  display: flex;
 }
 
 .index-concept-pic img {
@@ -168,12 +169,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 80%;
   flex: 1;
 }
 
 .index-concept-draw img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .story-draw-3 {
@@ -184,13 +184,13 @@
 .index-ingredient {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
   gap: 4%;
-  padding-left: 15.6%;
+  padding-left: 10%;
 }
 
 .index-ingredient-pic {
   flex: 3;
+  display: flex;
 }
 
 .index-ingredient-pic img {
@@ -200,18 +200,32 @@
 .index-ingredient-content {
   display: flex;
   flex-direction: column;
+  padding: 5% 0;
   width: 23%;
   gap: 32px;
   flex: 1;
 }
 
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+  .index-concept {
+    padding-right: 5%;
+  }
 
-@media screen and (max-width: 1024px) {}
+  .index-ingredient-pic {
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .index-concept-draw{
+    display: none;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .index-concept {
     display: block;
+    padding: 0;
   }
 
   .index-concept-content {
@@ -223,7 +237,6 @@
   }
 
   .index-concept-draw {
-    /* flex-direction: row; */
     align-items: center;
   }
 
@@ -238,6 +251,7 @@
 
   .index-ingredient {
     display: block;
+    padding: 0;
   }
 
   .index-ingredient-content {
