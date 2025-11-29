@@ -154,14 +154,15 @@
 
 .index-concept-pic img {
   width: 100%;
+  object-fit: cover;
 }
 
 .index-concept-content {
   display: flex;
   flex-direction: column;
-  width: 22%;
   gap: 32px;
   flex: 2;
+  padding: 5% 0;
 }
 
 .index-concept-draw {
@@ -195,13 +196,14 @@
 
 .index-ingredient-pic img {
   width: 100%;
+  object-fit: cover;
 }
 
 .index-ingredient-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 5% 0;
-  width: 23%;
   gap: 32px;
   flex: 1;
 }
@@ -217,7 +219,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .index-concept-draw{
+  .index-concept-draw {
     display: none;
   }
 }
@@ -345,27 +347,26 @@
 }
 
 /* 左右按鈕 */
+.slider-btn {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .slider-btn .prev,
-.next {
-  display: block;
+.slider-btn .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 65px;
   height: 65px;
+  border: none;
   border-radius: 50%;
-}
-
-.slider-btn .prev {
-  position: absolute;
-  top: 266px;
-  left: -65px;
-  background: url(../images/index/arrow-prev.svg) no-repeat center var(--color-primary-light);
-  transition: all .3s;
-}
-
-.slider-btn .next {
-  position: absolute;
-  top: 266px;
-  right: -65px;
-  background: url(../images/index/arrow-next.svg) no-repeat center var(--color-primary-light);
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  cursor: pointer;
   transition: all .3s;
 }
 
