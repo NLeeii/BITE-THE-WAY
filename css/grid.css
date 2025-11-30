@@ -3,7 +3,6 @@
     padding: 0 10px;
 } */
 .row {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-left: -8px;

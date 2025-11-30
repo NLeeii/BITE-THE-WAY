@@ -1,6 +1,56 @@
 // 初始化 AOS 動畫
 AOS.init();
 
+// 首頁 ======================
+// 漢堡slider
+if (document.querySelector('.burger-slider')) {
+
+  const swiper = new Swiper('.burger-slider', {
+    // 1. 基本設定
+    loop: true,           // 無限循環 (滑到最後一張接第一張)
+    centeredSlides: true, // 設定為 true，Active 的那張會置中
+    speed: 600,           // 滑動速度 (毫秒)
+    grabCursor: true,     // 滑鼠移上去變成手掌形狀
+
+    // 2. RWD 斷點設定 (Mobile First)
+    breakpoints: {
+      // 手機版 (小於 768px)
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // 平板 (大於等於 768px)
+      768: {
+        slidesPerView: 2, // 顯示 2 張 (實際上因為 centeredSlides，會是中間一張，兩邊各半張)
+        spaceBetween: 30,
+      },
+      // 電腦 (大於等於 1024px)
+      1024: {
+        slidesPerView: 2.5,
+        spaceBetween: 50,
+      },
+      // 電腦 (大於等於 1200px)
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      }
+    },
+
+    // 3. 圓點設定
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true, // 允許點擊圓點切換
+    },
+
+    // 4. 左右按鈕箭頭設定
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
+
+
 // 線上點餐 ===================
 
 // 線上點餐-加入購物車彈窗
@@ -35,14 +85,14 @@ const addToCartBtn = document.getElementById("add-to-cart-btn");
 const addSuccessMsg = document.querySelector(".add-success");
 
 if (addToCartBtn && addSuccessMsg && cartPopUp) {
-  
+
   function showAddSuccess(e) {
     if (e) e.preventDefault();
-    
+
     cartPopUp.classList.remove("show");
-    
+
     addSuccessMsg.classList.add("show");
-    
+
     setTimeout(function () {
       addSuccessMsg.classList.remove("show");
     }, 2000);

@@ -17,6 +17,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/grid.css">
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -66,9 +67,9 @@
             <h2 class="title">#品牌故事</h2>
           </div>
           <div class="index-story-subtitle">
-            <h3 class="subheading hide-lg-pc">— 咬出專於你的生活方式，BITE THE WAY —</h3>
-            <h3 class="subheading show-lg-pc">— 咬出屬於你的生活方式， </h3>
-            <h3 class="subheading show-lg-pc">BITE THE WAY —</h3>
+            <h3 class="subheading hide-lg">— 咬出專於你的生活方式，BITE THE WAY —</h3>
+            <h3 class="subheading show-lg">— 咬出屬於你的生活方式， </h3>
+            <h3 class="subheading show-lg">BITE THE WAY —</h3>
           </div>
           <div class="index-story-txt">
             <p class="txt-lg">我們相信，一口好的漢堡，能改變你對速食的印象</p>
@@ -77,7 +78,7 @@
             <p class="txt-lg">每一口，都有蔬菜的鮮、蛋白質的力與澱粉的暖</p>
             <p class="txt-lg">讓你的日常，不必在健康與效率之間做選擇 !</p>
           </div>
-          <div class="index-story-txt show-lg-pc">
+          <div class="index-story-txt show-lg">
             <p class="txt-lg">一口好的漢堡，改變你對速食的印象</p>
             <p class="txt-lg">我們以「健康 × 效率」為出發點</p>
             <p class="txt-lg">重新定義午餐選擇，豐富咬下的每一口</p>
@@ -137,7 +138,7 @@
         </div>
         <div class="content-article">
           <p class="txt-lg">
-            我們嚴選在地小農的新鮮蔬菜，搭配無添加的高品質食材，堅持使用純天然的食材，做出讓人願意每天都吃的健康速食。
+            嚴選在地小農的新鮮蔬菜，搭配無添加的高品質食材，堅持使用純天然的食材，做出讓人願意每天都吃的健康速食
           </p>
         </div>
         <div class="large-btn">
@@ -156,13 +157,13 @@
   <!-- 聯名餐點&最新消息 -->
   <section class="index-meal_news">
     <!-- 營養師聯名餐點 -->
-    <div class="index-meal container">
+    <div class="index-meal wrapper">
       <div class="index-meal-title">
         <h2 class="title">#營養師聯名餐點</h2>
       </div>
-      <div class="burger-list">
-        <ul class="row">
-          <li class="col-12 col-md-3 col-lg-3">
+      <div class="burger-slider swiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide burger-item">
             <div class="burger-list-pic">
               <img src="./images/index/burger01.png" alt="">
             </div>
@@ -172,8 +173,12 @@
             <div class="burger-name-info">
               <p class="txt-lg">豆腐排與多彩蔬菜的植物系主餐</p>
             </div>
+            <div class="burger-list-deco">
+              <img src="./images/index/burger-list-deco01.svg" alt="" class="curve-01">
+              <img src="./images/index/burger-list-deco02.svg" alt="" class="curve-02">
+            </div>
           </li>
-          <li class="col-12 col-md-6 col-lg-6">
+          <li class="swiper-slide burger-item">
             <div class="burger-list-pic">
               <img src="./images/index/burger02.png" alt="">
             </div>
@@ -181,14 +186,14 @@
               <h3 class="subheading">牛肉經典堡</h3>
             </div>
             <div class="burger-name-info">
-              <p class="txt-lg">經典漢堡排搭配特製醬料，讓輕盈不等於無味</p>
+              <p class="txt-lg">經典漢堡排搭配特製醬料</p>
             </div>
             <div class="burger-list-deco">
               <img src="./images/index/burger-list-deco01.svg" alt="" class="curve-01">
               <img src="./images/index/burger-list-deco02.svg" alt="" class="curve-02">
             </div>
           </li>
-          <li class="col-12 col-md-3 col-lg-3">
+          <li class="swiper-slide burger-item">
             <div class="burger-list-pic">
               <img src="./images/index/burger03.png" alt="">
             </div>
@@ -198,15 +203,50 @@
             <div class="burger-name-info">
               <p class="txt-lg">滿滿生菜搭配厚實魚排與雞胸肉</p>
             </div>
+            <div class="burger-list-deco">
+              <img src="./images/index/burger-list-deco01.svg" alt="" class="curve-01">
+              <img src="./images/index/burger-list-deco02.svg" alt="" class="curve-02">
+            </div>
+          </li>
+          <li class="swiper-slide burger-item">
+            <div class="burger-list-pic">
+              <img src="./images/index/burger04.png" alt="">
+            </div>
+            <div class="burger-name">
+              <h3 class="subheading">海陸雙拼堡</h3>
+            </div>
+            <div class="burger-name-info">
+              <p class="txt-lg">滿滿生菜搭配厚實魚排與雞胸肉</p>
+            </div>
+            <div class="burger-list-deco">
+              <img src="./images/index/burger-list-deco01.svg" alt="" class="curve-01">
+              <img src="./images/index/burger-list-deco02.svg" alt="" class="curve-02">
+            </div>
+          </li>
+          <li class="swiper-slide burger-item">
+            <div class="burger-list-pic">
+              <img src="./images/index/burger05.png" alt="">
+            </div>
+            <div class="burger-name">
+              <h3 class="subheading">海陸雙拼堡</h3>
+            </div>
+            <div class="burger-name-info">
+              <p class="txt-lg">滿滿生菜搭配厚實魚排與雞胸肉</p>
+            </div>
+            <div class="burger-list-deco">
+              <img src="./images/index/burger-list-deco01.svg" alt="" class="curve-01">
+              <img src="./images/index/burger-list-deco02.svg" alt="" class="curve-02">
+            </div>
           </li>
         </ul>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-      <div class="slider-btn">
-        <button type="button" class="prev"><span class="material-symbols-outlined">arrow_back</span></button>
-        <button type="button" class="next"><span class="material-symbols-outlined">arrow_forward</span></button>
-        <!-- <a href="#" class="prev"><span class="material-symbols-outlined">arrow_back</span></a> -->
-        <!-- <a href="#" class="next"><span class="material-symbols-outlined">arrow_forward</span></a> -->
-      </div>
+      <!-- 手機版分頁圓點按鈕 -->
+      <!-- <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div> -->
       <div class="large-btn">
         <a href="./order.html" class="more txt-lg">完整菜單<span
             class="material-symbols-outlined">keyboard_arrow_right</span></a>
@@ -219,7 +259,7 @@
       </div>
       <div class="index-news-list">
         <ul class="row" data-aos="fade-up" data-aos-duration="1200">
-          <li class="col-12 col-lg-4">
+          <li class="col-12 col-md-8 col-lg-4">
             <a href="#">
               <div class="index-news-pic">
                 <img src="./images/index/news-1.jpg" alt="">
@@ -230,7 +270,7 @@
               </div>
             </a>
           </li>
-          <li class="col-12 col-lg-4">
+          <li class="col-12 col-md-8 col-lg-4">
             <a href="#">
               <div class="index-news-pic">
                 <img src="./images/index/news-2.jpg" alt="">
@@ -241,7 +281,7 @@
               </div>
             </a>
           </li>
-          <li class="col-12 col-lg-4">
+          <li class="col-12 col-md-8 col-lg-4">
             <a href="#">
               <div class="index-news-pic">
                 <img src="./images/index/news-3.jpg" alt="">
@@ -293,6 +333,7 @@
     </div>
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/script.js"></script>
 </body>
 

@@ -125,89 +125,78 @@ html {
 }
 
 .main-header .header-nav {
-  display: none;
+  display: flex;
+  gap: 2em;
+}
+
+.main-header .header-nav a {
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+  transition: all .5s;
+}
+
+.main-header .header-nav a:hover {
+  color: var(--color-secondary);
+  transform: scale(1.1);
 }
 
 .main-header .header-btn {
-  display: none;
+  display: flex;
 }
 
-@media screen and (min-width: 768px) {
-  .main-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 65px;
-    background-color: var(--color-primary-default);
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 2;
-  }
+.main-header .header-btn a {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: transparent;
+}
 
+/* 線上點餐按鈕樣式 */
+.main-header .header-btn .order {
+  margin-right: 20px;
+  width: 132px;
+  height: 38px;
+  border-radius: 22px;
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-white);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 33px;
+  letter-spacing: 0.1em;
+  transition: all .3s;
+}
+
+.main-header .header-btn .order:hover {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+}
+
+/* 購物車按鈕樣式 */
+.main-header .header-btn .cart {
+  text-align: center;
+  transition: all .3s;
+}
+
+.main-header .header-btn .cart span {
+  color: var(--color-white);
+  line-height: 40px;
+  font-size: 29px;
+}
+
+.main-header .header-btn .cart:hover {
+  background-color: var(--color-secondary);
+}
+
+@media screen and (max-width: 1024px) {
   .main-header .header-nav {
-    display: flex;
-    gap: 2em;
-  }
-
-  .main-header .header-nav a {
-    color: var(--color-white);
-    letter-spacing: 0.1em;
-    transition: all .5s;
-  }
-
-  .main-header .header-nav a:hover {
-    color: var(--color-secondary);
-    transform: scale(1.1);
+    display: none;
   }
 
   .main-header .header-btn {
-    display: flex;
-  }
-
-  .main-header .header-btn a {
-    display: block;
-    width: 42px;
-    height: 42px;
-    border-radius: 21px;
-    background-color: transparent;
-  }
-
-  .main-header .header-btn .order {
-    margin-right: 20px;
-    width: 132px;
-    height: 38px;
-    border-radius: 22px;
-    color: var(--color-white);
-    background-color: var(--color-accent);
-    border: 2px solid var(--color-white);
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 33px;
-    letter-spacing: 0.1em;
-    transition: all .3s;
-  }
-
-  .main-header .header-btn .order:hover {
-    background-color: var(--color-secondary);
-    border: 2px solid var(--color-secondary);
-  }
-
-  .main-header .header-btn .cart {
-    text-align: center;
-    transition: all .3s;
-  }
-
-  .main-header .header-btn .cart span {
-    color: var(--color-white);
-    line-height: 40px;
-    font-size: 29px;
-  }
-
-  .main-header .header-btn .cart:hover {
-    background-color: var(--color-secondary);
+    display: none;
   }
 }
 
@@ -647,12 +636,23 @@ body {
 
 /* 顯示模式-rwd用 */
 
+/* max-width:1200px; */
 /* rwd時顯示 */
-.show-lg-pc {
+.show-lg {
   display: none;
 }
 
 /* rwd時隱藏 */
-.hide-lg-pc {
+.hide-lg {
+  display: block;
+}
+
+/* max-width:1024px; */
+.show-md {
+  display: none;
+}
+
+/* rwd時隱藏 */
+.hide-md {
   display: block;
 }

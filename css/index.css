@@ -291,8 +291,10 @@
 }
 
 /* 首頁-營養師聯名餐點 */
-.index-meal {
-  margin-bottom: 160px;
+.index-meal.wrapper {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto 140px;
   position: relative;
 }
 
@@ -301,78 +303,188 @@
   text-align: center;
 }
 
-.burger-list {
-  margin-bottom: 44px;
+.burger-slider {
+  width: 100%;
+  padding-top: 88px;
+  padding-bottom: 70px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
-.burger-list ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.burger-list ul li {
+.burger-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 16px;
-}
-
-.burger-list li:nth-child(2) {
-  position: relative;
-}
-
-.burger-list-deco img {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: wave-1 .8s infinite alternate-reverse;
-}
-
-.burger-list-deco .curve-02 {
-  left: 78%;
-}
-
-.burger-list .subheading {
-  color: var(--color-black);
+  transition: all 0.5s;
+  transform: scale(0.85);
 }
 
 .burger-list-pic img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 395px;
+  height: auto;
+  object-fit: contain;
+}
+
+.burger-slider .subheading {
+  color: var(--color-black);
+}
+
+/* --- Active 狀態 */
+.swiper-slide-active.burger-item {
+  transform: scale(1.4);
+  z-index: 10;
+}
+
+.swiper-slide-active.burger-item h3 {
+  font-size: 24px;
+}
+
+.swiper-slide-active.burger-item p {
+  font-size: 16px;
+}
+
+/* --- 裝飾圖 --- */
+.burger-list-deco {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.swiper-slide-active .burger-list-deco {
+  opacity: 1;
+}
+
+/* 裝飾圖定位 */
+.burger-list-deco img {
+  position: absolute;
+  top: 0;
+  animation: wave-1 .8s infinite alternate;
+}
+
+.curve-01 {
+  left: -30px;
+  width: 25%;
+}
+
+.curve-02 {
+  right: 20px;
+  width: 12%;
+}
+
+/* 手機版分頁圓點按鈕 */
+.swiper-pagination {
+  display: none;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-primary-light) !important;
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-secondary) !important;
+  opacity: 1;
+  width: 24px;
+  border-radius: 6px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
+  color: var(--color-white);
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+  font-weight: 900;
+  transition: all .3s;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: var(--color-secondary);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 24px;
 }
 
 .index-meal .large-btn a {
   margin: 0 auto;
 }
 
-/* 左右按鈕 */
-.slider-btn {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+@media screen and (max-width: 1200px) {
+  .curve-01 {
+    left: -50px;
+  }
+
+  .curve-02 {
+    right: -10px;
+    width: 12%;
+  }
+
+  .swiper-slide-active.burger-item {
+    transform: scale(1.3);
+  }
 }
 
-.slider-btn .prev,
-.slider-btn .next {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 65px;
-  height: 65px;
-  border: none;
-  border-radius: 50%;
-  background-color: var(--color-primary-light);
-  color: var(--color-white);
-  cursor: pointer;
-  transition: all .3s;
+@media screen and (max-width: 1024px) {
+  .curve-01 {
+    left: -25px;
+  }
+
+  .curve-02 {
+    right: 38px;
+    width: 10%;
+  }
+
+  .swiper-pagination {
+    display: block;
+  }
+
+  .burger-item .burger-name-info {
+    margin-bottom: 10px;
+  }
+
+  .burger-slider {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  .swiper-slide-active.burger-item {
+    transform: scale(1.2);
+  }
 }
 
-.slider-btn .prev:hover,
-.next:hover {
-  background-color: var(--color-secondary);
+@media screen and (max-width: 768px) {
+  .curve-01 {
+    left: 0;
+  }
+
+  .curve-02 {
+    right: 75px;
+  }
+
+  .swiper-slide-active.burger-item {
+    transform: scale(1.1);
+  }
+
+  .burger-item .burger-name-info {
+    margin-bottom: 0;
+  }
 }
 
 /* 首頁-最新消息 */
@@ -400,11 +512,28 @@
 }
 
 .index-news-pic img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .index-news .large-btn a {
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .index-news-list {
+    margin-bottom: 72px;
+  }
+
+  .index-news-list ul {
+    justify-content: center;
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .index-news-list li {
+    margin-bottom: 24px;
+  }
 }
 
 /* 最新消息頁 ===================  */
@@ -419,8 +548,11 @@
   gap: 72px;
 }
 
+.news-list li {
+  width: 100%;
+}
+
 .news-list .news-pic img {
-  display: block;
   width: 100%;
 }
 
@@ -445,11 +577,12 @@
 .news-type {
   width: 80px;
   height: 32px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-accent);
   font-size: 14px;
+  line-height: 30px;
   font-weight: 700;
   text-align: center;
+  border: 1px solid var(--color-accent);
   border-radius: 5px;
   position: absolute;
   right: 0;
@@ -569,10 +702,6 @@
 }
 
 /* 加入我們頁 ===================  */
-.brand-introduce {
-  margin: 72px 0;
-}
-
 .brand-introduce ul {
   display: flex;
   flex-direction: column;
@@ -681,7 +810,7 @@
   }
 
   .menu-list-item img {
-    max-width: 100%;
+    width: 100%;
     transition: all .3s;
   }
 
@@ -1046,11 +1175,21 @@
 
 /* 通用media區 */
 @media screen and (max-width: 1200px) {
-  .show-lg-pc {
+  .show-lg {
     display: block;
   }
 
-  .hide-lg-pc {
+  .hide-lg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .show-md {
+    display: block;
+  }
+
+  .hide-md {
     display: none;
   }
 }
