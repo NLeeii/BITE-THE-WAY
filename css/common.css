@@ -152,7 +152,6 @@ html {
   background-color: transparent;
 }
 
-/* 線上點餐按鈕樣式 */
 .main-header .header-btn .order {
   margin-right: 20px;
   width: 132px;
@@ -174,7 +173,7 @@ html {
   border: 2px solid var(--color-secondary);
 }
 
-/* 購物車按鈕樣式 */
+
 .main-header .header-btn .cart {
   text-align: center;
   transition: all .3s;
@@ -295,7 +294,6 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
 }
 
 .footer-social {

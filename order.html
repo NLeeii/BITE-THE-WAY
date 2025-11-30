@@ -165,7 +165,9 @@
     </div>
   </section>
   <!-- 加入購物車彈窗 -->
-  <div class="add-to-cart" id="cart-pop-up">
+
+  <!-- 為了修改先加上show=================== -->
+  <div class="add-to-cart show" id="cart-pop-up">
     <div class="add-to-cart-pop container row">
       <div class="add-to-cart-pic col-12 col-md-6 col-lg-5">
         <img src="./images/order/add-to-cart-burger.png" alt="牛肉經典堡圖片">
@@ -178,9 +180,42 @@
         <div class="add-to-cart-title">
           <p class="subheading">牛肉經典堡</p>
         </div>
-        <div class="add-to-cart-pull_down">
-          <p class="txt-sm">食材 : 手打牛肉排、番茄、水耕生菜、洋蔥、全麥堡</p>
-          <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+        <div class="cart-fold-wrap">
+          <ul class="fold-list">
+            <li class="fold-item">
+              <div class="fold-header">
+                <p class="txt-sm">餐點營養資訊</p>
+                <button><span class="material-symbols-outlined">keyboard_arrow_down</span></button>
+              </div>
+              <div class="fold-content">
+                <div class="fold-nutrition-info">
+                  <div class="fold-content-title">
+                    <p class="txt-lg bold">營養資訊</p>
+                  </div>
+                  <ul>
+                    <li><p class="txt-sm">重量(g)</p><span class="txt-sm">236</span></li>
+                    <li><p class="txt-sm">卡路里(kcal)</p><span class="txt-sm">366</span></li>
+                    <li><p class="txt-sm">蛋白質(g)</p><span class="txt-sm">26</span></li>
+                    <li><p class="txt-sm">碳水化合物(g)</p><span class="txt-sm">40</span></li>
+                    <li><p class="txt-sm">總脂肪(g)</p><span class="txt-sm">10.6</span></li>
+                    <li><p class="txt-sm">糖(g)</p><span class="txt-sm">6</span></li>
+                  </ul>
+                </div>
+                <div class="fold-allergy-info">
+                  <div class="fold-content-title">
+                    <p class="txt-lg bold">過敏原</p>
+                  </div>
+                  <p class="txt-sm">雞蛋、小麥、大豆、牛奶、牛肉</p>
+                </div>
+                <div class="fold-food-info">
+                  <div class="fold-content-title">
+                    <p class="txt-lg bold">食材產地</p>
+                  </div>
+                  <p class="txt-sm">牛肉原產地 : 澳洲</p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="add-to-cart-add_on">
           <div class="add_on-title">
@@ -204,12 +239,12 @@
           <p class="subheading">120元</p>
         </div>
         <div class="add-to-cart-btn medium-btn" id="add-to-cart-btn">
-            <a href="#" class="cart">加入購物車<span class="material-symbols-outlined">keyboard_arrow_right</span></a>
+          <a href="#" class="cart">加入購物車<span class="material-symbols-outlined">keyboard_arrow_right</span></a>
         </div>
       </div>
       <div class="close-btn">
         <a href="#"><span class="material-symbols-outlined">close</span></a>
-    </div>
+      </div>
     </div>
   </div>
   <!-- 成功加入購物車彈窗 -->

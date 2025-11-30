@@ -853,6 +853,9 @@
   height: 100%;
   background-color: rgba(99, 99, 99, .6);
   z-index: 5;
+  /* 捲軸設定 */
+  overflow-y: auto;
+  padding: 40px 0;
   /* 隱藏設定 */
   opacity: 0;
   visibility: hidden;
@@ -869,10 +872,13 @@
 .add-to-cart-pop {
   position: relative;
   justify-content: center;
+  align-items: flex-start;
   padding: 64px 0;
   border-radius: 20px;
   box-shadow: 10px 10px 20px 3px rgba(0, 0, 0, .3);
   background-color: #fff;
+  /* 避免手機板太貼邊 */
+  margin: auto;
 }
 
 .add-to-cart-title p {
@@ -884,11 +890,12 @@
   display: flex;
   justify-content: center;
   padding: 94px;
-  background: url(../images/order/add-deco-3.svg) no-repeat 20% 82%/60%;
+  /* background: url(../images/order/add-deco-3.svg) no-repeat 20% 82%/60%; */
 }
 
-.add-to-cart-pic img {
-  max-width: 100%;
+.add-to-cart-pic+img {
+  width: 100%;
+  height: auto;
 }
 
 .add-deco img {
@@ -908,7 +915,8 @@
   top: 40px;
 }
 
-.add-to-cart-pull_down {
+/* 餐點營養資訊fold-wrap */
+.cart-fold-wrap .fold-list .fold-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -916,12 +924,7 @@
   height: 40px;
   border: 1px solid var(--color-black);
   border-radius: 10px;
-
-  p {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  transition: all .3s;
 
   button {
     border: none;
@@ -934,6 +937,46 @@
   button span {
     font-size: 30px;
   }
+}
+
+.fold-content {
+  /* 用高度控制點按時的下滑效果 */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--color-light-gray);
+  border-radius: 0 0 10px 10px;
+  transition: all 0.3s ease;
+}
+
+.fold-content.show {
+  max-height: 550px;
+  opacity: 1;
+  padding: 24px 16px;
+}
+
+.fold-content-title {
+  border-bottom: 1px solid var(--color-primary-dark);
+  padding-bottom: 2px;
+  margin-bottom: 10px;
+}
+
+.fold-content-title p {
+  color: var(--color-primary-dark);
+}
+
+.fold-nutrition-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fold-nutrition-info ul li {
+  display: flex;
+  justify-content: space-between;
 }
 
 .add-to-cart-content {
@@ -983,7 +1026,6 @@
 
 .add-to-cart-btn {
   display: flex;
-  /* justify-content: flex-end; */
 }
 
 /* 關閉按鈕 */

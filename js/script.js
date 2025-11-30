@@ -54,76 +54,105 @@ if (document.querySelector('.burger-slider')) {
 // 線上點餐 ===================
 
 // 線上點餐-加入購物車彈窗
-const menuItems = document.querySelectorAll(".menu-list-item");
-const cartPopUp = document.getElementById("cart-pop-up");
-const cartCloseBtn = document.querySelector("#cart-pop-up .close-btn a");
+const menuItems = document.querySelectorAll('.menu-list-item');
+const cartPopUp = document.getElementById('cart-pop-up');
+const cartCloseBtn = document.querySelector('#cart-pop-up .close-btn a');
+// const popContent = document.querySelector('.add-to-cart-pop');
 
 if (cartPopUp) {
   function showPopUp(e) {
     if (e) e.preventDefault();
-    cartPopUp.classList.add("show");
+    cartPopUp.classList.add('show');
   }
 
   function closePopUp(e) {
     if (e) e.preventDefault();
-    cartPopUp.classList.remove("show");
+    cartPopUp.classList.remove('show');
   }
 
   if (menuItems.length > 0) {
     menuItems.forEach(function (item) {
-      item.addEventListener("click", showPopUp);
+      item.addEventListener('click', showPopUp);
     });
   }
 
   if (cartCloseBtn) {
-    cartCloseBtn.addEventListener("click", closePopUp);
+    cartCloseBtn.addEventListener('click', closePopUp);
   }
+
+  cartPopUp.addEventListener('click', function (e) {
+    if (e.target === this) { // e.target是"使用者實際點到的元素" // this等同是e.currentTarget，目前監聽的元件
+      closePopUp();
+    }
+  });
+}
+
+// 餐點營養資訊fold-wrap
+const foldButton = document.querySelector('.fold-header button');
+const foldContent = document.querySelector('.fold-content');
+const foldIcon = document.querySelector('.fold-header button span');
+const foldHeader = document.querySelector('.fold-header');
+
+if (foldButton && foldContent) {
+  foldButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    foldContent.classList.toggle('show');
+    if (foldContent.classList.contains('show')) {
+      foldIcon.style.transform = 'rotate(180deg)';
+      foldHeader.style.borderRadius = '10px 10px 0 0';
+      foldHeader.style.border = '1px solid #bbb';
+    }else {
+      foldIcon.style.transform = 'rotate(0)';
+      foldHeader.style.borderRadius = '10px';
+      foldHeader.style.border = '1px solid var(--color-black)';
+    }
+  })
 }
 
 // 成功加入購物車彈窗
-const addToCartBtn = document.getElementById("add-to-cart-btn");
-const addSuccessMsg = document.querySelector(".add-success");
+const addToCartBtn = document.getElementById('add-to-cart-btn');
+const addSuccessMsg = document.querySelector('.add-success');
 
 if (addToCartBtn && addSuccessMsg && cartPopUp) {
 
   function showAddSuccess(e) {
     if (e) e.preventDefault();
 
-    cartPopUp.classList.remove("show");
+    cartPopUp.classList.remove('show');
 
-    addSuccessMsg.classList.add("show");
+    addSuccessMsg.classList.add('show');
 
     setTimeout(function () {
-      addSuccessMsg.classList.remove("show");
+      addSuccessMsg.classList.remove('show');
     }, 2000);
   }
 
-  addToCartBtn.addEventListener("click", showAddSuccess);
+  addToCartBtn.addEventListener('click', showAddSuccess);
 }
 
 // 門市資訊 ===================
 
 // 門市切換
-const storeTabs = document.querySelectorAll(".store-name-list li");
-const storeContents = document.querySelectorAll(".store-content");
+const storeTabs = document.querySelectorAll('.store-name-list li');
+const storeContents = document.querySelectorAll('.store-content');
 
 if (storeTabs.length > 0 && storeContents.length > 0) {
 
   function changeStore(index) {
     storeTabs.forEach(function (tab) {
-      tab.classList.remove("name-active");
+      tab.classList.remove('name-active');
     });
 
     storeContents.forEach(function (content) {
-      content.classList.remove("show");
+      content.classList.remove('show');
     });
 
-    storeTabs[index].classList.add("name-active");
-    storeContents[index].classList.add("show");
+    storeTabs[index].classList.add('name-active');
+    storeContents[index].classList.add('show');
   }
 
   storeTabs.forEach(function (tab, index) {
-    tab.addEventListener("click", function (e) {
+    tab.addEventListener('click', function (e) {
       e.preventDefault();
       changeStore(index);
     });
