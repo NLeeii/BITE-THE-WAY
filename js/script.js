@@ -101,12 +101,61 @@ if (foldButton && foldContent) {
       foldIcon.style.transform = 'rotate(180deg)';
       foldHeader.style.borderRadius = '10px 10px 0 0';
       foldHeader.style.border = '1px solid #bbb';
-    }else {
+    } else {
       foldIcon.style.transform = 'rotate(0)';
       foldHeader.style.borderRadius = '10px';
       foldHeader.style.border = '1px solid var(--color-black)';
     }
   })
+}
+
+// 食材加購金額計算
+const addOnCheckbox = document.querySelectorAll('input[name="add-on"]');
+const originalPrice = document.getElementById('original-price');
+const basePrice = parseInt(originalPrice.innerText);
+
+if (addOnCheckbox) {
+  addOnCheckbox.forEach(function (option) {
+    option.addEventListener('change', function () {
+      calculateTotal();
+    })
+  })
+}
+
+// 餐點數量顯示
+const quantityBtnPlus = document.getElementById('quantity-btn-plus');
+const quantityBtnMinus = document.getElementById('quantity-btn-minus');
+const addToquantity = document.querySelector('input[name="add-to-quantity"]');
+
+if (quantityBtnPlus && quantityBtnMinus) {
+  quantityBtnPlus.addEventListener('click', function () {
+    let result = parseInt(addToquantity.value) + 1;
+    addToquantity.value = result;
+    calculateTotal();
+  })
+
+  quantityBtnMinus.addEventListener('click', function () {
+    let result = parseInt(addToquantity.value) - 1;
+    if (parseInt(addToquantity.value) < 2) {
+      result = 1;
+    }
+    addToquantity.value = result;
+    calculateTotal();
+  })
+}
+
+// 總金額計算
+function calculateTotal() {
+  let currentQuantity = addToquantity.value;
+  
+  let price = basePrice; // 每觸發一次change事件，金額都要回到原價
+  addOnCheckbox.forEach(function (box) { // 使用forEach()取代for，寫法更精簡，且確定每個都會元素都會被檢查一次
+    if (box.checked) {
+      price += parseInt(box.value);
+    }
+  })
+  let total = price * currentQuantity;
+  originalPrice.innerText = total;
 }
 
 // 成功加入購物車彈窗

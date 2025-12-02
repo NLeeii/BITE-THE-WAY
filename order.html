@@ -223,20 +223,20 @@
           </div>
           <div class="add_on-content">
             <ul>
-              <li class="txt-sm">厚打手工牛肉<label>60元<input type="checkbox" name="" id=""></label></li>
-              <li class="txt-sm">新鮮番茄片<label>20元<input type="checkbox" name="" id=""></label></li>
-              <li class="txt-sm">水耕生菜<label>30元<input type="checkbox" name="" id=""></label></li>
-              <li class="txt-sm">雞胸肉<label>55元<input type="checkbox" name="" id=""></label></li>
+              <li class="txt-sm">厚打手工牛肉<label>60元<input type="checkbox" name="add-on" value="60"></label></li>
+              <li class="txt-sm">新鮮番茄片<label>20元<input type="checkbox" name="add-on" value="20"></label></li>
+              <li class="txt-sm">水耕生菜<label>30元<input type="checkbox" name="add-on" value="30"></label></li>
+              <li class="txt-sm">雞胸肉<label>55元<input type="checkbox" name="add-on" value="55"></label></li>
             </ul>
           </div>
         </div>
         <div class="add-to-cart-price">
           <div class="quantity-btn">
-            <button><span class="material-symbols-outlined">add</span></button>
-            <input type="text" name="" id="" placeholder="1">
-            <button><span class="material-symbols-outlined">remove</span></button>
+            <button id="quantity-btn-minus"><span class="material-symbols-outlined">remove</span></button>
+            <input type="text" name="add-to-quantity" value="1">
+            <button id="quantity-btn-plus"><span class="material-symbols-outlined">add</span></button>
           </div>
-          <p class="subheading">120元</p>
+          <p class="subheading"><span id="original-price">120</span>元</p>
         </div>
         <div class="add-to-cart-btn medium-btn" id="add-to-cart-btn">
           <a href="#" class="cart">加入購物車<span class="material-symbols-outlined">keyboard_arrow_right</span></a>

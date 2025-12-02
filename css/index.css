@@ -1024,6 +1024,14 @@
   justify-content: space-between;
 }
 
+.quantity-btn > input {
+  outline: none;
+}
+
+.quantity-btn > button:hover span {
+  color: var(--color-primary-light);
+}
+
 .add-to-cart-btn {
   display: flex;
 }
