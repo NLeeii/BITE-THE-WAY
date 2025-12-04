@@ -32,7 +32,7 @@ if (document.querySelector('.burger-slider')) {
       // 電腦 (大於等於 1200px)
       1200: {
         slidesPerView: 3,
-        spaceBetween: 50,
+        spaceBetween: 0,
       }
     },
 
@@ -112,7 +112,10 @@ if (foldButton && foldContent) {
 // 食材加購金額計算
 const addOnCheckbox = document.querySelectorAll('input[name="add-on"]');
 const originalPrice = document.getElementById('original-price');
-const basePrice = parseInt(originalPrice.innerText);
+let basePrice = 0;
+if(originalPrice) {
+  basePrice = parseInt(originalPrice.textContent.trim()); // .textContent直接讀取 DOM 節點裡的文字內容，完全無視 CSS
+}                                                        // .innerText只會讀取到頁面上存在的內容，#cart-pop-up預設是隱藏狀態，也就抓取不到裡面的內容
 
 if (addOnCheckbox) {
   addOnCheckbox.forEach(function (option) {
@@ -146,6 +149,7 @@ if (quantityBtnPlus && quantityBtnMinus) {
 
 // 總金額計算
 function calculateTotal() {
+  if (!originalPrice) return;
   let currentQuantity = addToquantity.value;
   
   let price = basePrice; // 每觸發一次change事件，金額都要回到原價
@@ -206,5 +210,18 @@ if (storeTabs.length > 0 && storeContents.length > 0) {
       changeStore(index);
     });
   });
+}
+
+// FAQ區域，收合效果
+const faqListQs = document.querySelectorAll('a.faq-list-q');
+
+if(faqListQs) {
+  faqListQs.forEach(function(item){
+    item.addEventListener('click',function(e){
+      e.preventDefault();
+      this.closest('li').classList.toggle('show');
+    });
+  })
+
 }
 

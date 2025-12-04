@@ -1,45 +1,114 @@
 /* 網頁主視覺 */
 .banner {
   margin-top: 65px;
-  min-height: 70vh;
-  background: url(../images/index/hero-banner.png) no-repeat center center, url(../images/index/hero-line-1.svg) no-repeat #0A2A78;
-  background-size: cover;
+  height: 850px;
+  background-color: var(--color-primary-default);
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  overflow: hidden;
+}
+
+.banner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.banner-line path {
+  /* 設定虛線長度：這數值要夠大，大到超過整條線的長度 */
+  stroke-dasharray: 5000;
+
+  /* 初始狀態：把線推到 5000px 以外 (也就是隱藏起來) */
+  stroke-dashoffset: 5000;
+
+  /* forwards 是停在最後畫完的樣子 */
+  animation: drawLine 3s forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.banner-pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-pic img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .banner-title {
+  position: absolute;
+  z-index: 3;
   color: var(--color-white);
-  font-size: 31px;
+  font-size: 55px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (min-width: 1024px) {
+.banner-title:first-of-type {
+  left: 15%;
+  top: 10%;
+}
+
+.banner-title:last-of-type {
+  right: 5%;
+  bottom: 15%;
+}
+
+@media screen and (max-width: 1200px) {
+
   .banner {
-    margin-top: 65px;
-    background-size: auto;
-    height: 850px;
-    position: relative;
+    height: 900px;
+  }
+
+  .banner-pic {
+    justify-content: flex-end;
   }
 
   .banner-title {
-    font-size: 55px;
-    position: absolute;
+    font-size: 40px;
   }
 
-  .banner-title:first-child {
-    left: 205px;
-    top: 56px;
+  .banner-title:first-of-type {
+    top: 10%;
+    left: 5%;
   }
 
-  .banner-title:last-child {
-    right: 94px;
-    bottom: 56px;
+  .banner-title:last-of-type {
+    top: 17%;
+    left: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    height: 750px;
   }
 
+  .banner-title {
+    font-size: 28px;
+  }
 }
 
 /* 首頁-品牌故事 */
@@ -73,10 +142,6 @@
   justify-content: center;
   animation: bounce 1.5s infinite alternate-reverse;
 }
-
-/* .index-story-subtitle {
-  margin: 64px 0 56px 0;
-} */
 
 .rwd-index-story-txt {
   display: none;
@@ -292,9 +357,10 @@
 
 /* 首頁-營養師聯名餐點 */
 .index-meal.wrapper {
-  max-width: 1440px;
-  width: 90%;
+  /* max-width: 1440px; */
+  width: 100%;
   margin: 0 auto 140px;
+  /* padding: 0 50px; */
   position: relative;
 }
 
@@ -365,13 +431,13 @@
 }
 
 .curve-01 {
-  left: -30px;
-  width: 25%;
+  left: 20px;
+  width: 20%;
 }
 
 .curve-02 {
-  right: 20px;
-  width: 12%;
+  right: 80px;
+  width: 8%;
 }
 
 /* 手機版分頁圓點按鈕 */
@@ -417,18 +483,27 @@
   font-size: 24px;
 }
 
+.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, 80px);
+}
+
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, 80px);
+}
+
 .index-meal .large-btn a {
   margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {
   .curve-01 {
-    left: -50px;
+    left: -18px;
+    width: 23%;
   }
 
   .curve-02 {
-    right: -10px;
-    width: 12%;
+    right: 30px;
+    width: 10%;
   }
 
   .swiper-slide-active.burger-item {
@@ -438,11 +513,11 @@
 
 @media screen and (max-width: 1024px) {
   .curve-01 {
-    left: -25px;
+    left: -10px;
   }
 
   .curve-02 {
-    right: 38px;
+    right: 35px;
     width: 10%;
   }
 
@@ -471,11 +546,11 @@
 
 @media screen and (max-width: 768px) {
   .curve-01 {
-    left: 0;
+    left: 20px;
   }
 
   .curve-02 {
-    right: 75px;
+    right: 50px;
   }
 
   .swiper-slide-active.burger-item {
@@ -545,26 +620,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  gap: 40px;
 }
 
 .news-list li {
   width: 100%;
+  justify-content: center;
+  gap: 40px;
+}
+
+.news-list .news-pic {
+  display: flex;
 }
 
 .news-list .news-pic img {
   width: 100%;
-}
-
-.news-list .row {
-  justify-content: center;
-  gap: 40px;
+  object-fit: cover;
 }
 
 .news-list .news-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 24px;
   position: relative;
 }
 
@@ -592,12 +670,29 @@
   margin-top: 80px;
 }
 
+@media screen and (max-width: 1024px) {
+  .news-content .news-title {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .news-list li {
+    gap: 24px;
+  }
+
+  .news-content .news-title {
+    gap: 14px;
+  }
+}
+
 /* 門市資訊頁 =================== */
+/* 門市資訊 */
 .store {
   margin-bottom: 88px;
 }
 
-.store .row {
+.store .store-wrap {
   justify-content: space-evenly;
   align-items: flex-end;
 }
@@ -623,12 +718,14 @@
 
 .store-name-list ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .store-name-list li {
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   border-bottom: 3px solid transparent;
 }
 
@@ -655,6 +752,8 @@
 
 .store-info {
   display: flex;
+  flex-wrap: wrap;
+  gap: 16px 30px;
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 32px;
@@ -676,15 +775,24 @@
   gap: 24px;
 }
 
+.contact-form select,
 .contact-form input,
 .contact-form textarea {
   margin-top: 12px;
-  padding: 5px;
+  padding: 0 8px;
   width: 100%;
   height: 40px;
   border: 1px solid #7D7D7D;
   border-radius: 5px;
   outline-color: var(--color-primary-light);
+  font-size: 16px;
+}
+
+.contact-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E") no-repeat right 10px center / 18px transparent;
 }
 
 .contact-form textarea {
@@ -701,6 +809,71 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .store .store-wrap {
+    gap: 32px;
+  }
+}
+
+/* FAQ */
+.faq-list {
+  justify-content: center;
+}
+
+.faq-title {
+  margin: 72px 0 40px 0;
+  text-align: center;
+}
+
+.faq-title .libre-franklin {
+  font-size: 35px;
+  line-height: 125%;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+}
+
+.faq-list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.faq-list-wrap a {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 24px;
+  color: var(--color-primary-dark);
+  background-color: var(--color-light-gray);
+  /* border: 2px solid var(--color-gray); */
+  border-radius: 5px;
+}
+
+.faq-list-wrap a button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 30px;
+  font-size: 30px;
+}
+
+.faq-list-q span {
+  transition: all .2s;
+}
+
+.faq-list-item.show .faq-list-q span {
+  transform: rotate(180deg);
+}
+
+.faq-list-a {
+  display: none;
+  padding: 16px 24px;
+}
+
+.faq-list-item.show .faq-list-a {
+  display: block;
+}
+
 /* 加入我們頁 ===================  */
 .brand-introduce ul {
   display: flex;
@@ -712,10 +885,10 @@
 }
 
 .brand-introduce-content {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
   align-items: center;
   gap: 12px;
   text-align: center;
@@ -726,13 +899,15 @@
 }
 
 .brand-introduce-pic {
-  width: 50%;
+  display: flex;
+  flex: 1;
 }
 
 .brand-introduce-pic img {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .brand-recruite {
@@ -750,6 +925,20 @@
 
 .join-btn a {
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .brand-introduce ul li {
+    flex-direction: column;
+  }
+
+  .brand-introduce ul li:nth-child(odd) {
+    flex-direction: column-reverse;
+  }
+
+  .brand-introduce-content {
+    padding: 40px 0;
+  }
 }
 
 /* 線上點餐頁 ===================  */
@@ -846,13 +1035,10 @@
   position: fixed;
   left: 0;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(99, 99, 99, .6);
-  z-index: 5;
+  z-index: 100;
   /* 捲軸設定 */
   overflow-y: auto;
   padding: 40px 0;
@@ -870,7 +1056,10 @@
 }
 
 .add-to-cart-pop {
-  position: relative;
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
   align-items: flex-start;
   padding: 64px 0;
@@ -879,6 +1068,8 @@
   background-color: #fff;
   /* 避免手機板太貼邊 */
   margin: auto;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
 .add-to-cart-title p {
@@ -890,7 +1081,6 @@
   display: flex;
   justify-content: center;
   padding: 94px;
-  /* background: url(../images/order/add-deco-3.svg) no-repeat 20% 82%/60%; */
 }
 
 .add-to-cart-pic+img {
@@ -1022,13 +1212,14 @@
 .add-to-cart-price {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.quantity-btn > input {
+.quantity-btn>input {
   outline: none;
 }
 
-.quantity-btn > button:hover span {
+.quantity-btn>button:hover span {
   color: var(--color-primary-light);
 }
 
@@ -1092,20 +1283,22 @@
 
 /* 關於我們 ===================  */
 .brand-story {
-  margin: 144px 0 160px 0;
+  margin: 144px 0 144px 0;
   display: flex;
-  gap: 5%;
+  gap: 30px;
 }
 
 .brand-story-pic img {
-  display: block;
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
+  object-fit: cover;
 }
 
 .brand-story-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 32px;
 }
 
 .brand-story-title {
@@ -1115,7 +1308,7 @@
 }
 
 .brand-concept {
-  margin-bottom: 160px;
+  margin-bottom: 144px;
 }
 
 .brand-concept img {
@@ -1125,6 +1318,8 @@
 .brand-concept-head {
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
+  margin-bottom: 15px;
 }
 
 .brand-concept-head [class^="concept-head"] {
@@ -1138,6 +1333,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 40px;
 }
 
 .brand-concept-body [class^="concept-body"] {
@@ -1156,7 +1352,6 @@
 .about-slogan-bar .left,
 .about-slogan-bar .right {
   width: 50%;
-  padding: 20px 0;
   text-align: center;
   letter-spacing: 0.1em;
   background-color: var(--color-secondary);
@@ -1165,6 +1360,34 @@
 
 .about-slogan-bar .right {
   background-color: var(--color-primary-default);
+}
+
+.about-slogan-bar p {
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 1400px) {
+  .about-slogan-bar p {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .about-slogan-bar p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-slogan-bar p {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-slogan-bar p {
+    font-size: 28px;
+  }
 }
 
 /* 嚴選食材 */
@@ -1188,6 +1411,110 @@
   gap: 40px;
 }
 
+.ingredient-pic-list {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ingredient-list-item {
+  max-width: 500px;
+  height: 500px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1;
+  transition: flex .8s;
+}
+
+.ingredient-list-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all .6s;
+}
+
+.item-tag {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  padding: 5px 10px;
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all .3s ease;
+}
+
+.item-tag p {
+  color: var(--color-white);
+  font-weight: 400;
+}
+
+.item-content {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all .3s ease;
+  white-space: nowrap;
+}
+
+.item-content p {
+  color: var(--color-white);
+}
+
+.item-content .subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-secondary);
+}
+
+.item-content .description {
+  margin-top: 10px;
+  white-space: normal;
+}
+
+.ingredient-list-item:hover {
+  flex: 5;
+}
+
+.ingredient-list-item:hover img {
+  filter: brightness(0.5);
+  transform: scale(1.1);
+}
+
+.ingredient-list-item:hover .item-content,
+.ingredient-list-item:hover .item-tag {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .1s;
+}
+
+@media screen and (max-width: 1024px) {
+  .ingredient-list-item:hover {
+    flex: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ingredient-pic-list {
+    flex-direction: column;
+    height: 800px;
+    align-items: center;
+  }
+
+  .ingredient-list-item {
+    width: 100%;
+  }
+}
+
 .ingredient-pic-list li {
   position: relative;
   overflow: hidden;
@@ -1197,33 +1524,109 @@
   max-width: 100%;
 }
 
-.ingredient-pic-list .mask {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  position: absolute;
-  left: 8px;
-  top: 0;
-  padding: 50px;
-  width: calc(100% - 16px);
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  text-align: center;
-  opacity: 0;
-  transition: all .3s;
+
+@media screen and (max-width: 1400px) {
+  .brand-story {
+    margin: 80px 0 120px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .brand-story-pic {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.ingredient-pic-list .mask p {
-  color: var(--color-white);
+@media screen and (max-width: 1024px) {
+  .brand-concept-head {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
 }
 
-.ingredient-pic-list li:hover .mask {
-  opacity: 1;
+@media screen and (max-width: 768px) {
+  .brand-concept {
+    margin-bottom: 112px;
+  }
+
+  .concept-head-title {
+    order: -1;
+    margin-bottom: 48px;
+  }
+
+  .brand-concept-head [class^="concept-head-draw"] {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .brand-concept-head [class^="concept-head-draw"]:last-child {
+    flex-direction: row-reverse;
+  }
+
+  .brand-concept img {
+    width: 220px;
+  }
+
+  .brand-concept .hashtag-icon {
+    width: 100px;
+  }
+
+  .brand-concept-body .concept-body-draw-1 img {
+    width: 30%;
+  }
+
+  .brand-concept-body .concept-body-draw-3 {
+    display: none;
+  }
+}
+
+/* 通用rwd顯示模式 */
+
+/* max-width:1400px; */
+.show-xl {
+  display: none;
+}
+
+.hide-xl {
+  display: block;
+}
+
+/* max-width:1200px; */
+.show-lg {
+  display: none;
+}
+
+.hide-lg {
+  display: block;
+}
+
+/* max-width:1024px; */
+.show-md {
+  display: none;
+}
+
+/* rwd時隱藏 */
+.hide-md {
+  display: block;
 }
 
 /* 通用media區 */
+@media screen and (max-width: 1400px) {
+  .show-xl {
+    display: block;
+  }
+
+  .hide-xl {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .show-lg {
     display: block;

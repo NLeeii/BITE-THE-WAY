@@ -115,7 +115,7 @@ html {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 50;
 }
 
 .main-header .container {
@@ -135,7 +135,8 @@ html {
   transition: all .5s;
 }
 
-.main-header .header-nav a:hover {
+.main-header .header-nav a:hover,
+.main-header .header-nav a.active {
   color: var(--color-secondary);
   transform: scale(1.1);
 }
@@ -232,6 +233,7 @@ html {
 
 .header-banner-pic img {
   width: 100%;
+  object-fit: cover;
 }
 
 .header-banner-title {
@@ -254,6 +256,10 @@ html {
 }
 
 @media screen and (max-width: 1200px) {
+  .header-banner-pic img {
+    height: 25vh;
+  }
+
   .header-banner-title {
     font-size: 40px;
   }
@@ -264,6 +270,10 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .header-banner-pic img {
+    height: 20vh;
+  }
+
   .header-banner-title {
     font-size: 28px;
   }
@@ -579,29 +589,35 @@ body {
 /* 頁數切換按鈕 */
 .page-select-btn {
   margin: 16px 0 80px 0;
+}
 
-  ul {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
+.page-select-btn ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
 
-  a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid var(--color-gray);
-    border-radius: 50%;
-    color: var(--color-gray);
-    text-align: center;
-    line-height: 37px;
-  }
+.page-select-btn a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--color-gray);
+  border-radius: 50%;
+  color: var(--color-gray);
+  text-align: center;
+  line-height: 37px;
+}
 
-  li:first-child a {
-    background-color: var(--color-primary-light);
-    border: 1.5px solid var(--color-primary-light);
-    color: var(--color-white);
-  }
+.page-select-btn li.active a {
+  background-color: var(--color-primary-light);
+  border: 1.5px solid var(--color-primary-light);
+  color: var(--color-white);
+}
+
+.page-select-btn li:hover a {
+  background-color: var(--color-secondary);
+  border: 1.5px solid var(--color-secondary);
+  color: var(--color-white);
 }
 
 /* 數量按鈕 */
@@ -620,7 +636,7 @@ body {
   background-color: transparent;
   cursor: pointer;
   padding: 0;
-  height: 40px;
+  height: 42px;
   color: var(--color-black);
 }
 
@@ -630,27 +646,4 @@ body {
   background-color: transparent;
   border: none;
   text-align: center;
-}
-
-/* 顯示模式-rwd用 */
-
-/* max-width:1200px; */
-/* rwd時顯示 */
-.show-lg {
-  display: none;
-}
-
-/* rwd時隱藏 */
-.hide-lg {
-  display: block;
-}
-
-/* max-width:1024px; */
-.show-md {
-  display: none;
-}
-
-/* rwd時隱藏 */
-.hide-md {
-  display: block;
 }

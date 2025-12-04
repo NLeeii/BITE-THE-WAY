@@ -30,7 +30,7 @@
         </a>
       </div>
       <nav class="header-nav">
-        <a href="#" class="txt-md">關於我們</a>
+        <a href="#" class="active txt-md">關於我們</a>
         <a href="./news.html" class="txt-md">最新消息</a>
         <a href="./stores.html" class="txt-md">門市資訊</a>
         <a href="./join.html" class="txt-md">加入我們</a>
@@ -57,15 +57,18 @@
   </section>
   <!-- 品牌故事 -->
   <section class="brand-story">
+    <div class="brand-story-title show-xl">
+      <h2 class="title">#品牌故事</h2>
+    </div>
     <div class="brand-story-pic" data-aos="fade-right" data-aos-duration="1000">
       <img src="./images/about/brand-story.jpg" alt="">
     </div>
     <div class="brand-story-content">
       <div class="brand-story-title">
-        <h2 class="title">#品牌故事</h2>
+        <h2 class="title hide-xl">#品牌故事</h2>
         <h3 class="subheading">— 咬出屬於自己的生活方式，BITE THE WAY —</h3>
       </div>
-      <div class="index-story-txt">
+      <div class="brand-story-txt">
         <p class="txt-lg">我們相信，一口好的漢堡，能改變你對速食的印象，</p>
         <p class="txt-lg">BITE THE WAY 以「健康 × 效率」為出發點，重新定義午餐選擇 !</p>
         <p class="txt-lg">不只是快速，更是均衡；不只是飽，更是對身體友善的選擇，</p>
@@ -82,7 +85,7 @@
         <p class="subheading">多一點蔬菜</p>
       </div>
       <div class="concept-head-title col-12 col-md-4 col-lg-4">
-        <img src="./images/about/concept-deco01.svg" alt="hashtag標誌裝飾">
+        <img src="./images/about/concept-deco01.svg" alt="hashtag標誌裝飾" class="hashtag-icon">
         <h2 class="title">#品牌理念</h2>
         <h3 class="subheading">— 吃，該更有方向 —</h3>
       </div>
@@ -127,29 +130,49 @@
       </div>
     </div>
     <div class="ingredient-pic" data-aos="fade-up" data-aos-duration="1000">
-      <ul class="ingredient-pic-list row">
-        <li class="col-12 col-md-4 col-lg-4">
+      <ul class="ingredient-pic-list">
+        <li class="ingredient-list-item">
           <img src="./images/about/Ingredient-1.jpg" alt="食材圖片-番茄">
-          <div class="mask">
-            <p class="mask-title subtitle">TOMATO</p>
-            <p class="mask-title txt-lg">— 自然酸甜的日常亮點 —</p>
-            <p class="mask-txt txt-sm">新鮮現切的番茄，帶來剛剛好的酸甜與多汁，替每一口增添清爽的層次。</p>
+          <div class="item-tag">
+            <p class="txt-md">台中 | 武士農場</p>
+          </div>
+          <div class="item-content">
+            <p class="subtitle">TOMATO</p>
+            <p class="txt-lg">— 自然酸甜的日常亮點 —</p>
+            <p class="description txt-sm">新鮮現切的番茄，帶來剛剛好的酸甜與多汁，替每一口增添清爽的層次。</p>
           </div>
         </li>
-        <li class="col-12 col-md-4 col-lg-4">
+        <li class="ingredient-list-item">
           <img src="./images/about/Ingredient-2.jpg" alt="食材圖片-小黃瓜">
-          <div class="mask">
-            <p class="mask-title subtitle">CUCUMBER</p>
-            <p class="mask-title txt-lg">— 脆感清新能量 —</p>
-            <p class="mask-txt txt-sm">保留小黃瓜最原始的爽脆，清涼又解膩，讓速食也能吃起來更輕盈。</p>
+          <div class="item-tag">
+            <p class="txt-md">雲林 | 微醺農場</p>
+          </div>
+          <div class="item-content">
+            <p class="subtitle">CUCUMBER</p>
+            <p class="txt-lg">— 脆感清新能量 —</p>
+            <p class="description txt-sm">保留小黃瓜最原始的爽脆，清涼又解膩，讓速食也能吃起來更輕盈。</p>
           </div>
         </li>
-        <li class="col-12 col-md-4 col-lg-4">
+        <li class="ingredient-list-item">
           <img src="./images/about/Ingredient-3.jpg" alt="食材圖片-洋蔥">
-          <div class="mask">
-            <p class="mask-title subtitle">ONION</p>
-            <p class="mask-title txt-lg">— 甜度慢熬出的風味基底 —</p>
-            <p class="mask-txt txt-sm">細緻處理後的洋蔥，帶上自然清甜與微微辛香，讓整體味道更有靈魂。</p>
+          <div class="item-tag">
+            <p class="txt-md">桃園 | 珍田生機</p>
+          </div>
+          <div class="item-content">
+            <p class="subtitle">ONION</p>
+            <p class="txt-lg">— 甜度慢熬出的風味基底 —</p>
+            <p class="description txt-sm">細緻處理後的洋蔥，帶上自然清甜與微微辛香，讓整體味道更有靈魂。</p>
+          </div>
+        </li>
+        <li class="ingredient-list-item">
+          <img src="./images/about/Ingredient-4.jpg" alt="食材圖片-生菜">
+          <div class="item-tag">
+            <p class="txt-md">桃園 | 在地小農</p>
+          </div>
+          <div class="item-content">
+            <p class="subtitle">LETTUCE</p>
+            <p class="txt-lg">— 有機土耕栽培滋味更豐富 —</p>
+            <p class="description txt-sm">桃園小農堅持自然土耕生長，並採無農藥、無化肥的方式。</p>
           </div>
         </li>
       </ul>
