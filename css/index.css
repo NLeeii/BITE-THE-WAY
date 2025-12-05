@@ -387,8 +387,13 @@
   transform: scale(0.85);
 }
 
+.burger-list-pic {
+  display: flex;
+  justify-content: center;
+}
+
 .burger-list-pic img {
-  width: 100%;
+  width: 80%;
   max-width: 395px;
   height: auto;
   object-fit: contain;
@@ -944,7 +949,9 @@
 /* 線上點餐頁 ===================  */
 .main-menu {
   margin-top: 153px;
-  background: url(../images/order/bg-logo.svg) no-repeat center 40%;
+  padding-bottom: 64px;
+  min-height: 100vh;
+  background: url(../images/order/bg-logo-1.svg) no-repeat center 60px;
 }
 
 .menu-title {
@@ -981,53 +988,68 @@
   text-align: center;
   line-height: 48px;
   color: var(--color-primary-dark);
-
+  transition: all .3s;
 }
 
-.menu-select-button li:first-child a {
+.menu-select-button li.active a {
   border: 1px solid var(--color-primary-light);
   color: var(--color-white);
   background-color: var(--color-primary-light);
 }
 
+.menu-select-button li:hover a {
+  border: 1px solid var(--color-secondary);
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
 
-.menu-list {
-  .menu-list-item {
-    margin-bottom: 32px;
-    padding: 40px 45px;
-    text-align: center;
-  }
+.menu-list_burger,
+.menu-list_bowl,
+.menu-list_side,
+.menu-list_drink {
+  display: none;
+}
 
-  .menu-list-item img {
-    width: 100%;
-    transition: all .3s;
-  }
+.menu-list.show {
+  display: block;
+}
 
-  .menu-list-item:hover img {
-    scale: 1.1;
-  }
+.menu-list-item {
+  margin-bottom: 32px;
+  padding: 40px 45px;
+  text-align: center;
+}
 
-  .menu-list-txt {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 32px;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--color-black);
-  }
+.menu-list-item img {
+  width: 100%;
+  transition: all .3s;
+}
 
-  .menu-list-txt .price {
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    color: var(--color-primary-dark);
-  }
+.menu-list-item:hover img {
+  scale: 1.1;
+}
 
-  .menu-list-txt .burger-eng-name {
-    font-size: 16px;
-    letter-spacing: 0.1em;
-  }
+.menu-list-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  color: var(--color-black);
+}
+
+.menu-list-txt .price {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: var(--color-primary-dark);
+}
+
+.menu-list-txt .burger-eng-name {
+  font-size: 16px;
+  letter-spacing: 0.1em;
 }
 
 /* 加入購物車彈窗 */
@@ -1343,50 +1365,147 @@
   gap: 40px;
 }
 
-/* slogan裝飾條 */
+/* 品牌slogan */
 .about-slogan-bar {
-  display: flex;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background: url(../images/about/slogan-bg.jpg) no-repeat center center/cover;
+}
+
+.about-slogan-bar>div {
+  position: absolute;
   color: var(--color-white);
 }
 
-.about-slogan-bar .left,
-.about-slogan-bar .right {
-  width: 50%;
-  text-align: center;
+.about-slogan-bar div p {
+  font-size: 48px;
+  line-height: 2;
   letter-spacing: 0.1em;
-  background-color: var(--color-secondary);
   white-space: nowrap;
 }
 
-.about-slogan-bar .right {
+.about-slogan-bar .pill-border {
+  font-size: 40px;
+  line-height: 1;
+  padding: 5px 30px;
+  border: 5px solid var(--color-white);
+  border-radius: 80px;
+}
+
+.about-slogan-bar .tape-pos-green {
+  top: 120px;
+}
+
+.about-slogan-bar .tape-pos-blue {
+  top: 60px;
+  right: 0;
+}
+
+.about-slogan-bar .tape-green {
+  width: 750px;
+  text-align: center;
+  background-color: var(--color-secondary);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateX(-30px) rotate(-15deg);
+}
+
+.about-slogan-bar .tape-blue {
+  width: 850px;
+  text-align: center;
   background-color: var(--color-primary-default);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  transform: translateX(40px) rotate(15deg);
 }
 
-.about-slogan-bar p {
-  line-height: 1.8;
-}
+@media screen and (max-width: 1600px) {
+  .about-slogan-bar {
+    height: 50vh;
+  }
 
-@media screen and (max-width: 1400px) {
-  .about-slogan-bar p {
-    font-size: 48px;
+  .about-slogan-bar div p {
+    font-size: 40px;
+  }
+
+  .about-slogan-bar .pill-border {
+    font-size: 32px;
+    border: 4px solid var(--color-white);
+  }
+
+  .about-slogan-bar .tape-green {
+    width: 650px;
+  }
+
+  .about-slogan-bar .tape-blue {
+    width: 750px;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .about-slogan-bar p {
-    font-size: 40px;
+  .about-slogan-bar .tape-pos-green {
+    top: 400px;
   }
-}
 
-@media screen and (max-width: 1024px) {
-  .about-slogan-bar p {
-    font-size: 28px;
+  .about-slogan-bar .tape-green {
+    transform: translateX(-30px) rotate(0deg);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .about-slogan-bar p {
-    font-size: 28px;
+  .about-slogan-bar {
+    height: 30vh;
+  }
+
+  .about-slogan-bar div p {
+    font-size: 32px;
+  }
+
+  .about-slogan-bar .pill-border {
+    font-size: 24px;
+    padding: 5px 20px;
+    border: 2px solid var(--color-white);
+  }
+
+  .about-slogan-bar .tape-pos-green {
+    top: 250px;
+  }
+
+  .about-slogan-bar .tape-pos-blue {
+    top: -30px;
+  }
+
+  .about-slogan-bar .tape-green {
+    width: 450px;
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  .about-slogan-bar .tape-blue {
+    width: 550px;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-slogan-bar div p {
+    font-size: 24px;
+  }
+
+  .about-slogan-bar .pill-border {
+    font-size: 20px;
+  }
+
+  .about-slogan-bar .tape-pos-green {
+    top: 270px;
+  }
+
+  .about-slogan-bar .tape-green {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .about-slogan-bar .tape-blue {
+    width: 100%;
+    padding: 0 20px;
   }
 }
 

@@ -68,6 +68,13 @@
   }
 }
 
+/* 防溢出 */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* google-icon */
 .material-symbols-outlined {
   font-variation-settings:

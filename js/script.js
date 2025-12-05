@@ -53,11 +53,36 @@ if (document.querySelector('.burger-slider')) {
 
 // 線上點餐 ===================
 
-// 線上點餐-加入購物車彈窗
+// 餐點分類切換 
+const menuSelectButtons = document.querySelectorAll('.menu-select-button ul li');
+const menuLists = document.querySelectorAll('.menu-list');
+if (menuSelectButtons && menuLists) {
+  console.log(menuSelectButtons);
+  console.log(menuLists);
+  function changeMenuList(index) {
+    menuSelectButtons.forEach(function(button){
+      button.classList.remove('active');
+    });
+    menuLists.forEach(function(list){
+      list.classList.remove('show');
+    });
+    menuSelectButtons[index].classList.add('active');
+    menuLists[index].classList.add('show');
+  }
+  menuSelectButtons.forEach(function (button, index) {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      changeMenuList(index);
+    });
+  })
+}
+
+
+
+// 加入購物車彈窗
 const menuItems = document.querySelectorAll('.menu-list-item');
 const cartPopUp = document.getElementById('cart-pop-up');
 const cartCloseBtn = document.querySelector('#cart-pop-up .close-btn a');
-// const popContent = document.querySelector('.add-to-cart-pop');
 
 if (cartPopUp) {
   function showPopUp(e) {
@@ -113,7 +138,7 @@ if (foldButton && foldContent) {
 const addOnCheckbox = document.querySelectorAll('input[name="add-on"]');
 const originalPrice = document.getElementById('original-price');
 let basePrice = 0;
-if(originalPrice) {
+if (originalPrice) {
   basePrice = parseInt(originalPrice.textContent.trim()); // .textContent直接讀取 DOM 節點裡的文字內容，完全無視 CSS
 }                                                        // .innerText只會讀取到頁面上存在的內容，#cart-pop-up預設是隱藏狀態，也就抓取不到裡面的內容
 
@@ -151,7 +176,7 @@ if (quantityBtnPlus && quantityBtnMinus) {
 function calculateTotal() {
   if (!originalPrice) return;
   let currentQuantity = addToquantity.value;
-  
+
   let price = basePrice; // 每觸發一次change事件，金額都要回到原價
   addOnCheckbox.forEach(function (box) { // 使用forEach()取代for，寫法更精簡，且確定每個都會元素都會被檢查一次
     if (box.checked) {
@@ -215,9 +240,9 @@ if (storeTabs.length > 0 && storeContents.length > 0) {
 // FAQ區域，收合效果
 const faqListQs = document.querySelectorAll('a.faq-list-q');
 
-if(faqListQs) {
-  faqListQs.forEach(function(item){
-    item.addEventListener('click',function(e){
+if (faqListQs) {
+  faqListQs.forEach(function (item) {
+    item.addEventListener('click', function (e) {
       e.preventDefault();
       this.closest('li').classList.toggle('show');
     });
