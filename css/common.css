@@ -197,13 +197,120 @@ html {
   background-color: var(--color-secondary);
 }
 
+#header-burger-menu {
+  display: none;
+}
+
+.header-burger-menu {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.header-burger-menu span {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.header-burger-menu span:nth-child(1) {
+  top: 8px;
+}
+
+.header-burger-menu span:nth-child(2) {
+  top: 18px;
+}
+
+.header-burger-menu span:nth-child(3) {
+  top: 28px;
+}
+
+.header-burger-content {
+  position: fixed;
+  top: 65px;
+  right: 0;
+  width: 100%;
+  height: calc(100vh - 65px);
+  background-color: var(--color-primary-dark);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-burger-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+}
+
+.header-burger-content a {
+  color: var(--color-white);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.header-burger-content a:hover {
+  color: var(--color-secondary);
+}
+
+#header-burger-menu:checked~.header-burger-content {
+  transform: translateX(0%);
+}
+
+#header-burger-menu:checked~.header-burger-menu span:nth-child(1) {
+  top: 18px;
+  transform: rotate(45deg);
+}
+
+#header-burger-menu:checked~.header-burger-menu span:nth-child(2) {
+  opacity: 0;
+}
+
+#header-burger-menu:checked~.header-burger-menu span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-45deg);
+}
+
+
 @media screen and (max-width: 1024px) {
+  .main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .header-logo {
+    flex: 1;
+  }
+
+  .header-btn .cart {
+    margin-right: 16px;
+  }
+
   .main-header .header-nav {
     display: none;
   }
 
-  .main-header .header-btn {
+  .main-header .header-btn .order {
     display: none;
+  }
+
+  .header-burger-menu {
+    display: block;
   }
 }
 
@@ -227,6 +334,10 @@ html {
 
   .header-btn .cart:hover span {
     color: var(--color-white);
+  }
+
+  .header-burger-menu span {
+    background-color: var(--color-primary-light);
   }
 }
 
