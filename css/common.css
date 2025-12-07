@@ -40,10 +40,19 @@
   }
 
   100% {
-    transform: rotate(-5deg);
+    transform: rotate(-20deg);
   }
 }
 
+@keyframes wave-2 {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 @keyframes scroll {
   0% {
@@ -298,7 +307,7 @@ html {
   }
 
   .header-btn .cart {
-    margin-right: 16px;
+    margin-right: 5px;
   }
 
   .main-header .header-nav {
@@ -424,6 +433,10 @@ html {
   gap: 8px;
 }
 
+.main-footer p {
+  font-size: 16px;
+}
+
 .footer-social {
   display: flex;
 }
@@ -449,7 +462,8 @@ html {
   border-radius: 50%;
   position: absolute;
   right: 5%;
-  top: 40%;
+  top: 50%;
+  transform: translateY(-50%);
   transition: all .3s;
 }
 
@@ -470,6 +484,29 @@ html {
   .to-top a {
     background-color: var(--color-primary-light);
     color: var(--color-white);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-footer p {
+    font-size: 14px;
+  }
+
+  .footer-social ul {
+    gap: 3px;
+  }
+
+  .footer-social ul img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .main-footer .to-top a {
+    width: 55px;
+    height: 55px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 10px;
   }
 }
 
@@ -529,7 +566,6 @@ body {
 
 .txt-md {
   font-size: 18px;
-  font-weight: 700;
   line-height: 140%;
   letter-spacing: 0.03em;
   color: var(--color-black);
@@ -589,7 +625,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .subtitle {
@@ -598,8 +634,20 @@ body {
   }
 
   .subheading {
-    font-size: 20px;
+    font-size: 22px;
     line-height: 160%;
+  }
+
+  .txt-xl {
+    font-size: 19px;
+  }
+
+  .txt-lg {
+    font-size: 16px;
+  }
+
+  .txt-md {
+    font-size: 16px;
   }
 }
 
@@ -764,4 +812,37 @@ body {
   background-color: transparent;
   border: none;
   text-align: center;
+}
+
+/* 表單 */
+form ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+form select,
+form input,
+form textarea {
+  margin-top: 6px;
+  padding: 0 8px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #7D7D7D;
+  border-radius: 5px;
+  outline-color: var(--color-primary-light);
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23000000'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' /%3E%3C/svg%3E") no-repeat right 10px center / 18px transparent;
+}
+
+form textarea {
+  height: 80px;
+  resize: none;
 }

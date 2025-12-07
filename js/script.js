@@ -60,10 +60,10 @@ if (menuSelectButtons && menuLists) {
   console.log(menuSelectButtons);
   console.log(menuLists);
   function changeMenuList(index) {
-    menuSelectButtons.forEach(function(button){
+    menuSelectButtons.forEach(function (button) {
       button.classList.remove('active');
     });
-    menuLists.forEach(function(list){
+    menuLists.forEach(function (list) {
       list.classList.remove('show');
     });
     menuSelectButtons[index].classList.add('active');
@@ -80,33 +80,65 @@ if (menuSelectButtons && menuLists) {
 
 
 // 加入購物車彈窗
+
+// 元素
 const menuItems = document.querySelectorAll('.menu-list-item');
 const cartPopUp = document.getElementById('cart-pop-up');
 const cartCloseBtn = document.querySelector('#cart-pop-up .close-btn a');
 
+// 彈窗內部要變更的元素
+const popupImg = document.querySelector('.add-to-cart-pic img');
+const popupTitle = document.querySelector('.add-to-cart-title .subheading');
+const popupPrice = document.getElementById('original-price');
+const popupQuantity = document.querySelector('input[name="add-to-quantity"]');
+const popupAddOns = document.querySelectorAll('input[name="add-on"]');
+
+
+function showPopUp(e) {
+  if (e) e.preventDefault();
+
+  const name = this.dataset.name;
+  const price = this.dataset.price;
+  const img = this.dataset.img;
+
+  if (popupTitle) popupTitle.textContent = name;
+  if (popupPrice) popupPrice.textContent = price;
+  if (popupImg) {
+    popupImg.src = img;
+    popupImg.alt = name + "圖片";
+  }
+
+  if (popupQuantity) popupQuantity.value = 1;
+
+  if (popupAddOns) {
+    popupAddOns.forEach(checkbox => checkbox.checked = false);
+  }
+
+  if (typeof basePrice !== 'undefined') { 
+    basePrice = parseInt(price);
+  }
+
+  cartPopUp.classList.add('show');
+}
+
+function closePopUp(e) {
+  if (e) e.preventDefault();
+  cartPopUp.classList.remove('show');
+}
+
+if (menuItems.length > 0) {
+  menuItems.forEach(function (item) {
+    item.addEventListener('click', showPopUp);
+  });
+}
+
+if (cartCloseBtn) {
+  cartCloseBtn.addEventListener('click', closePopUp);
+}
+
 if (cartPopUp) {
-  function showPopUp(e) {
-    if (e) e.preventDefault();
-    cartPopUp.classList.add('show');
-  }
-
-  function closePopUp(e) {
-    if (e) e.preventDefault();
-    cartPopUp.classList.remove('show');
-  }
-
-  if (menuItems.length > 0) {
-    menuItems.forEach(function (item) {
-      item.addEventListener('click', showPopUp);
-    });
-  }
-
-  if (cartCloseBtn) {
-    cartCloseBtn.addEventListener('click', closePopUp);
-  }
-
   cartPopUp.addEventListener('click', function (e) {
-    if (e.target === this) { // e.target是"使用者實際點到的元素" // this等同是e.currentTarget，目前監聽的元件
+    if (e.target === this) {
       closePopUp();
     }
   });
@@ -250,3 +282,35 @@ if (faqListQs) {
 
 }
 
+// 購物車 ===================
+function setDateDefault() {
+  const dateInput = document.querySelector('.cart-header-selector input[type="date"]');
+
+  if (!dateInput) return;
+
+  const today = new Date();
+
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+
+  const formattedDate = `${yyyy}-${mm}-${dd}`;
+  dateInput.value = formattedDate;
+  dateInput.min = formattedDate;
+}
+
+setDateDefault();
+
+
+// to-top按鈕，返回最頂部 ===================
+const toTopBtn = document.querySelector('.to-top a');
+
+if (toTopBtn) {
+  toTopBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}

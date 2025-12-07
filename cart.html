@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>購物車-SHOPPING CART</title>
+  <link href="./images/favicon.ico" rel="icon">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,900;1,900&family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/grid.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!-- 頁首 -->
+  <header class="main-header" id="top">
+    <div class="container">
+      <div class="header-logo">
+        <a href="./index.html">
+          <h1><img src="./images/index/logo-white.svg" alt="BITE THE WAY LOGO"></h1>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="./about.html" class="txt-md bold">關於我們</a>
+        <a href="./news.html" class="txt-md bold">最新消息</a>
+        <a href="./stores.html" class="txt-md bold">門市資訊</a>
+        <a href="./join.html" class="txt-md bold">加入我們</a>
+      </nav>
+      <div class="header-btn">
+        <a href="./order.html" class="order" class="txt-md bold">線上點餐</a>
+        <a href="./cart.html" class="cart">
+          <span class="material-symbols-outlined">local_mall</span>
+        </a>
+      </div>
+      <!-- 手機漢堡選單 -->
+      <input type="checkbox" id="header-burger-menu">
+      <label for="header-burger-menu" class="header-burger-menu">
+        <div class="header-burger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </label>
+      <div class="header-burger-content">
+        <ul>
+          <li><a href="./order.html">線上點餐</a></li>
+          <li><a href="./about.html">關於我們</a></li>
+          <li><a href="./news.html">最新消息</a></li>
+          <li><a href="./stores.html">門市資訊</a></li>
+          <li><a href="./join.html">加入我們</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- 購物車頭部 -->
+  <section class="cart-header container">
+    <div class="cart-header-title">
+      <h2 class="subheading">外帶自取訂單</h2>
+    </div>
+    <div class="cart-header-selector">
+      <select name="store">
+        <option>桃園青埔店</option>
+        <option>桃園蘆竹店</option>
+        <option>新竹中正店</option>
+        <option>新竹世界店</option>
+      </select>
+      <input type="date" placeholder="請選擇取餐日期">
+      <select name="time">
+        <option>08:00</option>
+        <option>08:40</option>
+        <option>09:00</option>
+        <option>09:40</option>
+        <option>10:00</option>
+        <option>10:40</option>
+        <option>11:00</option>
+        <option>11:40</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>13:40</option>
+        <option>14:00</option>
+      </select>
+    </div>
+  </section>
+  <!-- 購物車內容 -->
+  <section class="cart-body container row">
+    <div class="order-detail col-11 col-lg-6">
+      <div class="confirm-meal">
+        <div class="cart-title">
+          <h3 class="txt-xl bold">確認餐點</h3>
+        </div>
+        <div class="confirm-meal-list">
+          <ul>
+            <li class="confirm-meal-item">
+              <div class="meal-item-pic">
+                <img src="./images/cart/burger01.png" alt="經典牛肉堡圖片">
+              </div>
+              <div class="meal-item-info">
+                <p class="meal-name txt-lg bold">經典牛肉堡</p>
+                <p class="add-on txt-sm">+ 新鮮番茄片</p>
+                <div class="meal-item-price">
+                  <div class="quantity-btn">
+                    <button id="quantity-btn-minus"><span class="material-symbols-outlined">remove</span></button>
+                    <input type="text" name="add-to-quantity" value="1">
+                    <button id="quantity-btn-plus"><span class="material-symbols-outlined">add</span></button>
+                  </div>
+                  <p class="txt-lg bold"><span id="original-price">120</span>元</p>
+                </div>
+              </div>
+            </li>
+            <li class="confirm-meal-item">
+              <div class="meal-item-pic">
+                <img src="./images/cart/burger08.png" alt="經典牛肉堡圖片">
+              </div>
+              <div class="meal-item-info">
+                <p class="meal-name txt-lg bold">檸香鮭魚堡</p>
+                <p class="add-on txt-sm">+ 水耕生菜</p>
+                <div class="meal-item-price">
+                  <div class="quantity-btn">
+                    <button id="quantity-btn-minus"><span class="material-symbols-outlined">remove</span></button>
+                    <input type="text" name="add-to-quantity" value="1">
+                    <button id="quantity-btn-plus"><span class="material-symbols-outlined">add</span></button>
+                  </div>
+                  <p class="txt-lg bold"><span id="original-price">170</span>元</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="order-info">
+        <div class="cart-title">
+          <h3 class="txt-xl bold">訂購資訊</h3>
+        </div>
+        <form class="order-form">
+          <ul>
+            <li>
+              <div class="contact-form-name txt-md bold">姓名</div>
+              <input type="text" placeholder="請輸入訂購人姓名">
+            </li>
+            <li>
+              <div class="contact-form-name txt-md bold">電話</div>
+              <input type="text" placeholder="請輸入訂購人電話">
+            </li>
+            <li>
+              <div class="contact-form-name txt-md bold">備註</div>
+              <textarea name="query" placeholder="請輸入備註"></textarea>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+    <div class="order-paymant col-11 col-lg-4">
+      <div class="cart-title">
+        <h3 class="txt-xl  bold">付款方式</h3>
+      </div>
+      <div class="payment">
+        <div class="online-payment">
+          <div class="online-payment-title">
+            <p class="txt-lg bold">線上付款</p>
+          </div>
+          <div class="online-payment-option">
+            <label class="online-payment-2 txt-md">信用卡<input type="radio" name="payment" checked></label>
+            <label class="online-payment-2 txt-md">LINE PAY<input type="radio" name="payment"></label>
+            <label class="online-payment-1 txt-md">全支付<input type="radio" name="payment"></label>
+          </div>
+        </div>
+        <div class="store-payment">
+          <div class="store-payment-title">
+            <p class="txt-lg bold">門市付款</p>
+          </div>
+          <div class="store-payment-option">
+            <label class="store-payment-1 txt-md">現金支付<input type="radio" name="payment"></label>
+          </div>
+        </div>
+      </div>
+      <div class="subtotal">
+        <div class="discount-code">
+          <form class="discount-code-form">
+            <div class="form-name">
+              <p class="txt-lg bold">折扣碼</p>
+            </div>
+            <input type="text" placeholder="請輸入折扣碼">
+          </form>
+        </div>
+        <div class="subtotal-detail">
+          <div class="subtotal-detail-title">
+            <p class="txt-lg bold">小計</p>
+          </div>
+          <div class="subtotal-detail-list">
+            <ul>
+              <li class="txt-sm">經典牛肉堡<span>120元</span></li>
+              <li class="txt-sm">新鮮番茄片<span>20元</span></li>
+              <li class="txt-sm">檸香鮭魚堡<span>140元</span></li>
+              <li class="txt-sm">水耕生菜<span>30元</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="cart-price">
+        <div class="add-to-cart-btn medium-btn" id="add-to-cart-btn">
+          <a href="#" class="cart">立即結帳<span class="material-symbols-outlined">keyboard_arrow_right</span></a>
+        </div>
+        <div class="total-amount subheading"><span>310</span>元</div>
+      </div>
+    </div>
+  </section>
+  <!-- 頁尾 -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="logo-footer">
+        <img src="./images/index/logo-footer-white.svg" alt="BITE THE WAY LOGO">
+      </div>
+      <div class="main-footer-info">
+        <div class="footer-tel">
+          <p>Tel 0800-865-865</p>
+        </div>
+        <div class="footer-social">
+          <p>FOLLOW US &nbsp|&nbsp </p>
+          <ul>
+            <li><a href="#"><img src="./images/index/fb-icon-white.svg" alt=""></a></li>
+            <li><a href="#"><img src="./images/index/ig-icon-white.svg" alt=""></a></li>
+          </ul>
+        </div>
+        <div class="footer-copyright">
+          <p>© COPYRIGHT 2025 - BITE THE WAY</p>
+        </div>
+      </div>
+      <div class="to-top">
+        <a href="#"><span class="material-symbols-outlined">keyboard_control_key</span>TOP</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

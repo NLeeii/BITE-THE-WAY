@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <title>門市資訊-STORE</title>
   <link href="./images/favicon.ico" rel="icon">
   <link rel="stylesheet" href="./css/reset.css">
@@ -30,14 +31,14 @@
         </a>
       </div>
       <nav class="header-nav">
-        <a href="./about.html" class="txt-md">關於我們</a>
-        <a href="./news.html" class="txt-md">最新消息</a>
-        <a href="./stores.html" class="active txt-md">門市資訊</a>
-        <a href="./join.html" class="txt-md">加入我們</a>
+        <a href="./about.html" class="txt-md bold">關於我們</a>
+        <a href="./news.html" class="txt-md bold">最新消息</a>
+        <a href="./stores.html" class="active txt-md bold">門市資訊</a>
+        <a href="./join.html" class="txt-md bold">加入我們</a>
       </nav>
       <div class="header-btn">
-        <a href="./order.html" class="order" class="txt-md">線上點餐</a>
-        <a href="#" class="cart">
+        <a href="./order.html" class="order" class="txt-md bold">線上點餐</a>
+        <a href="./cart.html" class="cart">
           <span class="material-symbols-outlined">local_mall</span>
         </a>
       </div>
@@ -62,7 +63,7 @@
     </div>
   </header>
   <!-- 頁首banner -->
-  <section class="header-banner" id="header-banner">
+  <section class="header-banner">
     <div class="header-banner-pic">
       <img src="./images/store/header-banner.jpg" alt="">
     </div>
@@ -77,7 +78,7 @@
       <h2 class="libre-franklin">CONTACT US !</h2>
     </div>
     <div class="store-wrap row">
-      <div class="store-contact col-12 col-md-6 col-lg-5">
+      <div class="store-contact col-11 col-md-6 col-lg-5">
         <div class="store-contact-title">
           <p class="txt-lg bold">聯絡資訊</p>
         </div>
@@ -160,40 +161,40 @@
           </ul>
         </div>
       </div>
-      <div class="store-contact col-12 col-md-4 col-lg-4">
-        <div class="contact-form">
+      <!-- 聯絡表單 -->
+      <div class="store-contact col-11 col-md-4 col-lg-4">
+        <form class="contact-form">
           <ul>
             <li>
-              <div class="contact-form-name txt-md">聯絡項目</div>
+              <div class="contact-form-name txt-md bold">聯絡項目</div>
               <select name="" id="">
                 <option value="franchise">國內加盟</option>
                 <option value="collaboration">聯名合作</option>
                 <option value="customer">顧客服務</option>
                 <option value="else">其他</option>
               </select>
-              <!-- <input type="text" placeholder="請輸入聯絡目的"> -->
             </li>
             <li>
-              <div class="contact-form-name txt-md">姓名</div>
+              <div class="contact-form-name txt-md bold">姓名</div>
               <input type="text" placeholder="請輸入聯絡人姓名">
             </li>
             <li>
-              <div class="contact-form-name txt-md">電話</div>
+              <div class="contact-form-name txt-md bold">電話</div>
               <input type="text" placeholder="請輸入聯絡人電話">
             </li>
             <li>
-              <div class="contact-form-name txt-md">電子信箱</div>
+              <div class="contact-form-name txt-md bold">電子信箱</div>
               <input type="text" placeholder="請輸入電子信箱">
             </li>
             <li>
-              <div class="contact-form-name txt-md">相關詢問</div>
+              <div class="contact-form-name txt-md bold">相關詢問</div>
               <textarea name="query" placeholder="請輸入相關詢問"></textarea>
             </li>
           </ul>
           <div class="submit-btn large-btn">
             <a href="#" class="more txt-lg">提交</a>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
@@ -203,9 +204,10 @@
       <h2 class="libre-franklin">常見問題</h2>
     </div>
     <div class="faq-list row">
-      <ul class="faq-list-wrap col-12 col-md-11 col-lg-10">
+      <ul class="faq-list-wrap col-11 col-md-11 col-lg-10">
         <li class="faq-list-title">
-          <p class="txt-xl bold">1. 餐點與食材 | Food & Ingredients</p>
+          <p class="txt-xl bold hide-sm">1. 餐點與食材 | <span class="txt-md">Food & Ingredients</span></p>
+          <p class="txt-xl bold show-sm">1. 餐點與食材<br><span class="txt-sm">Food & Ingredients</span></p>
         </li>
         <li class="faq-list-item">
           <a href="#" class="faq-list-q txt-lg bold">
@@ -235,7 +237,8 @@
           </div>
         </li>
         <li class="faq-list-title">
-          <p class="txt-xl bold">2. 服務與訂餐 | Service & Ordering</p>
+          <p class="txt-xl bold hide-sm">2. 服務與訂餐 | <span class="txt-md">Service & Ordering</span></p>
+          <p class="txt-xl bold show-sm">2. 服務與訂餐<br><span class="txt-sm">Service & Ordering</span></p>
         </li>
         <li class="faq-list-item">
           <a href="#" class="faq-list-q txt-lg bold">
@@ -265,7 +268,8 @@
           </div>
         </li>
         <li class="faq-list-title">
-          <p class="txt-xl bold">3. 門市相關 | Store Information</p>
+          <p class="txt-xl bold hide-sm">3. 門市相關 | <span class="txt-md">Store Information</span></p>
+          <p class="txt-xl bold show-sm">3. 門市相關<br><span class="txt-sm">Store Information</span></p>
         </li>
         <li class="faq-list-item">
           <a href="#" class="faq-list-q txt-lg bold">
@@ -310,7 +314,7 @@
         </div>
       </div>
       <div class="to-top">
-        <a href="#header-banner"><span class="material-symbols-outlined">keyboard_control_key</span>TOP</a>
+        <a href="#"><span class="material-symbols-outlined">keyboard_control_key</span>TOP</a>
       </div>
     </div>
   </footer>
