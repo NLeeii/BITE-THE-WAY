@@ -440,6 +440,12 @@
   background-color: var(--color-secondary);
 }
 
+@media screen and (max-width: 768px) {
+  .index-slogan-bar.libre-franklin {
+    font-size: 28px;
+  }
+}
+
 /* 首頁-聯名餐點&最新消息 */
 .index-meal_news {
   padding: 96px 0 122px 0;
@@ -1528,6 +1534,18 @@
 
 .brand-concept img {
   max-width: 100%;
+}
+
+.concept-draw01 {
+  animation: up 1.5s infinite alternate-reverse;
+}
+
+.concept-draw03 {
+  animation: up 1.5s infinite alternate-reverse;
+}
+
+.concept-draw02 {
+  animation: up 1.5s infinite alternate-reverse;
 }
 
 .brand-concept-head {
