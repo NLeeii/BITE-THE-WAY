@@ -16,7 +16,7 @@
 * **樣式與排版:** SCSS, CSS Grid, Flexbox, CSS Variables, RWD
 * **第三方套件:**
     * **AOS.js:** 處理滾動視差與進場動畫。
-    * **Swiper.js:** 應用於首頁漢堡輪播效果。
+    * **Swiper:** 應用於首頁漢堡輪播效果。
 * **開發工具:** Git, VS Code, Chrome DevTools
 * **設計與素材:** Figma, Adobe Illustrator, Adobe Photoshop Gemini (AI 圖像生成)
 
